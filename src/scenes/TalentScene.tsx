@@ -1,9 +1,10 @@
 import { BriefingRail, SpokenFacts } from '@/components/BriefingRail'
+import { PhotoPlate } from '@/components/PhotoPlate'
 import { GroupedBars } from '@/components/charts/GroupedBars'
 import { HBarChart } from '@/components/charts/HBarChart'
 import { StackBar } from '@/components/charts/StackBar'
 import { VColumnChart } from '@/components/charts/VColumnChart'
-import { fact, snapshot } from '@/data/load'
+import { fact, missionBayPinProperties, snapshot } from '@/data/load'
 import { kpisFor } from '@/lib/kpis'
 import { formatFact, formatPercent, formatSf } from '@/lib/format'
 import { MISSION_BAY_CAMERA } from '@/lib/mapStyle'
@@ -16,7 +17,7 @@ export function TalentScene() {
   const nodes = [...snapshot.talent.aiLeaseNodes].sort((a, b) => b.sf - a.sf)
 
   useEffect(() => {
-    setCamera({ ...MISSION_BAY_CAMERA, zoom: 12.2, pitch: 50 })
+    setCamera({ ...MISSION_BAY_CAMERA, zoom: 12.15, pitch: 34 })
   }, [setCamera])
 
   return (
@@ -28,6 +29,23 @@ export function TalentScene() {
       kpis={kpis}
       asOf={snapshot.talent.asOf}
     >
+      <div className="grid grid-cols-3 gap-2">
+        {missionBayPinProperties().map((item) => (
+          <div key={item.id} className="flex gap-2 border border-ink/10 bg-white/55 p-1.5">
+            <PhotoPlate
+              name={item.name}
+              address={item.address}
+              city={item.city}
+              photoUrl={item.photoUrl}
+              className="h-12 w-12"
+            />
+            <span className="min-w-0">
+              <span className="block truncate text-[12px] font-medium text-ink">{item.name}</span>
+              <span className="block truncate text-[11px] text-ink/55">{item.city}</span>
+            </span>
+          </div>
+        ))}
+      </div>
       <HBarChart
         caption="SF AI leasing by node · Feb 3 deck"
         tone="ai"

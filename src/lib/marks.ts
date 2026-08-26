@@ -47,6 +47,21 @@ const domains: Record<string, string> = {
   'sf giants': 'mlb.com',
   giants: 'mlb.com',
   'generation lab': 'generationlab.com',
+  stanford: 'stanford.edu',
+  'uc berkeley': 'berkeley.edu',
+  berkeley: 'berkeley.edu',
+  replit: 'replit.com',
+  cooley: 'cooley.com',
+  orrick: 'orrick.com',
+  'sunday robotics': 'sundayrobotics.com',
+  solace: 'solace.com',
+  astrazeneca: 'astrazeneca.com',
+  zoox: 'zoox.com',
+  roblox: 'roblox.com',
+  bridgebio: 'bridgebio.com',
+  langchain: 'langchain.com',
+  oracle: 'oracle.com',
+  'revolution medicines': 'revmed.com',
 }
 
 const aliases: Record<string, string> = {

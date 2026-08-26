@@ -1,6 +1,6 @@
-import { compsBySet, missionBayPinProperties, snapshot, vacantTourProperties } from '@/data/load'
-import type { Accent, Comp, MapLayer, MapPin, Property } from '@/data/types'
-import { formatCompRent, formatNnn, formatPercent, formatPropertyAsking, formatSf, formatUsd } from '@/lib/format'
+import { fact, missionBayPinProperties, snapshot, vacantTourProperties } from '@/data/load'
+import type { Accent, MapLayer, MapPin, Property } from '@/data/types'
+import { formatFact, formatPropertyAsking, formatSf, formatUsd } from '@/lib/format'
 
 const kindAccent: Record<string, Accent> = {
   'life-science': 'cryo',
@@ -8,38 +8,22 @@ const kindAccent: Record<string, Accent> = {
   institutional: 'copper',
 }
 
-export function pinsForLayer(layer: MapLayer, share = false): MapPin[] {
+export function pinsForLayer(layer: MapLayer, _share = false): MapPin[] {
   switch (layer) {
     case 'bay':
+    case 'markets':
+    case 'office':
+    case 'rnd':
+    case 'exploding':
     case 'corridor':
-    case 'compression':
-      return snapshot.corridors.map((corridor) => ({
-        id: corridor.id,
-        kind: 'corridor' as const,
-        lng: corridor.lng,
-        lat: corridor.lat,
-        index: corridor.index,
-        accent: corridor.accent,
-        label: corridor.name,
-        sublabel: corridor.city,
-        fact: corridor.city,
-      }))
     case 'silicon-valley':
-      return snapshot.submarkets.map((item, index) => ({
-        id: item.id,
-        kind: 'submarket' as const,
-        lng: item.lng,
-        lat: item.lat,
-        index: index + 1,
-        accent: item.q4AbsorptionSf >= 0 ? ('cryo' as const) : ('copper' as const),
-        label: item.name,
-        sublabel: `${formatPercent(item.vacancyPct)} vacant`,
-        fact: `${formatPercent(item.vacancyPct)} vacant · ${formatNnn(item.askingNnn)}`,
-      }))
     case 'peninsula':
-      return mappableComps(compsBySet('pen-office', share))
+    case 'product':
+    case 'talent':
+    case 'compression':
+      return marketPins()
     case 'leasing':
-      return mappableComps(compsBySet('ls-new', share))
+      return marketPins()
     case 'funding':
       return [
         ...snapshot.funding.namedRounds.map((round, index) => ({
@@ -69,16 +53,41 @@ export function pinsForLayer(layer: MapLayer, share = false): MapPin[] {
       const proof = snapshot.properties.find((item) => item.id === 'san-carlos-research')
       return proof ? [propertyPin(proof, 0)] : []
     }
-    case 'office':
-      return mappableComps(compsBySet('pen-office', share), 'gold')
-    case 'product':
-      return [...pinsForLayer('thesis', share), ...mappableComps(compsBySet('ls-new', share))]
-    case 'talent':
-      return pinsForLayer('mission-bay', share)
     default: {
       const _exhaustive: never = layer
       return _exhaustive
     }
+  }
+}
+
+function marketPins(): MapPin[] {
+  return snapshot.markets.map((market, index) => {
+    const vacancy = safeFact(market.officeVacFact)
+    const asking = safeFact(market.officeAskFact)
+    return {
+      id: market.id,
+      kind: 'market' as const,
+      lng: market.lng,
+      lat: market.lat,
+      index: index + 1,
+      accent: market.role === 'core' ? ('cryo' as const) : ('gold' as const),
+      label: market.name,
+      sublabel: [vacancy ? formatFact(vacancy) : null, asking ? formatFact(asking) : null]
+        .filter(Boolean)
+        .join(' · '),
+      fact: market.line,
+      calloutDx: market.calloutDx,
+      calloutDy: market.calloutDy,
+    }
+  })
+}
+
+function safeFact(id: string | null) {
+  if (!id) return null
+  try {
+    return fact(id)
+  } catch {
+    return null
   }
 }
 
@@ -106,30 +115,6 @@ function propertyFact(item: Property) {
     formatPropertyAsking(item),
   ].filter(Boolean)
   return parts.join(' · ')
-}
-
-function mappableComps(comps: Comp[], accent: Accent = 'cryo'): MapPin[] {
-  return comps.flatMap((comp) => {
-    if (!comp.propertyId) return []
-    const property = snapshot.properties.find((item) => item.id === comp.propertyId)
-    if (!property) return []
-    const rent = formatCompRent(comp)
-    return [
-      {
-        id: comp.id,
-        kind: 'comp' as const,
-        lng: property.lng,
-        lat: property.lat,
-        index: comp.index,
-        accent,
-        label: property.name,
-        sublabel: comp.tenant,
-        fact: [formatSf(comp.areaLeasedSf, true), rent, property.city, occupancyWord(property.occupancy)]
-          .filter(Boolean)
-          .join(' · '),
-      },
-    ]
-  })
 }
 
 function mappableCasePins(): MapPin[] {
@@ -167,8 +152,5 @@ function propertyPin(item: Property, index: number): MapPin {
 }
 
 export function twinPins(): MapPin[] {
-  const corridors = pinsForLayer('corridor')
-  const inventory = pinsForLayer('inventory')
-  const rounds = pinsForLayer('funding')
-  return [...corridors, ...inventory, ...rounds]
+  return [...marketPins(), ...pinsForLayer('inventory'), ...pinsForLayer('funding')]
 }

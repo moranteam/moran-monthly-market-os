@@ -6,42 +6,50 @@ export type KpiSpec = {
   icon: IconName
 }
 
-const byScene: Record<string, Record<LensId, KpiSpec[]>> = {
+const shared: Record<string, Record<LensId, KpiSpec[]>> = {
   cover: {
     occupier: [
-      { factId: 'baAiListingPct', icon: 'zap' },
-      { factId: 'baRemoteListingPct', icon: 'users' },
-      { factId: 'usAiVcShareSince2020Pct', icon: 'banknote' },
-      { factId: 'sfOfficeAiActivityPct', icon: 'building-2' },
+      { factId: 'sfOfficeVacancyPct', icon: 'building-2' },
+      { factId: 'penOfficeVacancyPct', icon: 'building-2' },
+      { factId: 'svVacancyPct', icon: 'factory' },
+      { factId: 'baLsVacancyPct', icon: 'flask-conical' },
     ],
     owner: [
-      { factId: 'baLsVacancyPct', icon: 'flask-conical' },
+      { factId: 'sfOfficeVacancyPct', icon: 'building-2' },
       { factId: 'penOfficeVacancyPct', icon: 'building-2' },
-      { factId: 'usAiVcShareSince2020Pct', icon: 'banknote' },
-      { factId: 'baAiListingPct', icon: 'zap' },
+      { factId: 'gsvOfficeVacancyPct', icon: 'factory' },
+      { factId: 'oakOfficeVacancyPct', icon: 'building-2' },
     ],
     lender: [
+      { factId: 'sfOfficeQ2AbsSf', icon: 'trending-up' },
+      { factId: 'penOfficeAbsSf', icon: 'trending-up' },
+      { factId: 'svQ2AbsSf', icon: 'trending-up' },
       { factId: 'usAiVcShareSince2020Pct', icon: 'banknote' },
-      { factId: 'q4NetAbsorptionSf', icon: 'trending-up' },
-      { factId: 'baLsVacancyPct', icon: 'flask-conical' },
-      { factId: 'sfOfficeAiActivityPct', icon: 'briefcase' },
     ],
   },
-  thesis: {
+}
+
+const byScene: Record<string, Record<LensId, KpiSpec[]>> = {
+  cover: shared.cover,
+  markets: shared.cover,
+  rnd: {
     occupier: [
-      { factId: 'roboticsSf', icon: 'factory' },
-      { factId: 'thesisGroupsInProcess', icon: 'users' },
-      { factId: 'baLsVacancyPct', icon: 'flask-conical' },
+      { factId: 'svVacancyPct', icon: 'factory' },
+      { factId: 'svAvgAskingNnn', icon: 'banknote' },
+      { factId: 'svQ2AbsSf', icon: 'trending-up' },
+      { factId: 'svUnderConstructionSf', icon: 'factory' },
     ],
     owner: [
-      { factId: 'roboticsSf', icon: 'factory' },
-      { factId: 'baLsVacancyPct', icon: 'flask-conical' },
-      { factId: 'thesisGroupsInProcess', icon: 'users' },
+      { factId: 'svVacancyPct', icon: 'factory' },
+      { factId: 'svTotalNraSf', icon: 'factory' },
+      { factId: 'svDeliveredSf', icon: 'trending-up' },
+      { factId: 'svUnderConstructionSf', icon: 'factory' },
     ],
     lender: [
-      { factId: 'thesisGroupsInProcess', icon: 'briefcase' },
-      { factId: 'roboticsSf', icon: 'factory' },
-      { factId: 'baLsVacancyPct', icon: 'flask-conical' },
+      { factId: 'svQ2AbsSf', icon: 'trending-up' },
+      { factId: 'svYtdAbsSf', icon: 'trending-up' },
+      { factId: 'svLeasingMsf', icon: 'briefcase' },
+      { factId: 'svUnderConstructionSf', icon: 'factory' },
     ],
   },
   leasing: {
@@ -66,56 +74,39 @@ const byScene: Record<string, Record<LensId, KpiSpec[]>> = {
     occupier: [
       { factId: 'penOfficeFsg', icon: 'banknote' },
       { factId: 'penOfficeVacancyPct', icon: 'building-2' },
-      { factId: 'baRemoteListingPct', icon: 'users' },
-      { factId: 'penOfficeSoftwarePct', icon: 'briefcase' },
-    ],
-    owner: [
-      { factId: 'penOfficeVacancyPct', icon: 'building-2' },
-      { factId: 'svVacancyPct', icon: 'factory' },
-      { factId: 'penOfficeAbsSf', icon: 'trending-up' },
-      { factId: 'sfOfficeAiActivityPct', icon: 'zap' },
-    ],
-    lender: [
-      { factId: 'penOfficeAbsSf', icon: 'trending-up' },
-      { factId: 'penOfficeVacancyPct', icon: 'building-2' },
       { factId: 'sfOfficeVacancyPct', icon: 'building-2' },
-      { factId: 'penOfficeLeasesQ4', icon: 'briefcase' },
-    ],
-  },
-  product: {
-    occupier: [
-      { factId: 'powerMinWsf', icon: 'zap' },
-      { factId: 'roboticsSf', icon: 'factory' },
-      { factId: 'baLsVacancyPct', icon: 'flask-conical' },
+      { factId: 'penAiDemandMsf', icon: 'zap' },
     ],
     owner: [
-      { factId: 'powerMinWsf', icon: 'zap' },
-      { factId: 'baLsVacancyPct', icon: 'flask-conical' },
-      { factId: 'roboticsSf', icon: 'factory' },
+      { factId: 'penOfficeVacancyPct', icon: 'building-2' },
+      { factId: 'gsvOfficeVacancyPct', icon: 'factory' },
+      { factId: 'penOfficeAbsSf', icon: 'trending-up' },
+      { factId: 'sfOfficeVacancyPct', icon: 'building-2' },
     ],
     lender: [
-      { factId: 'backupPowerMinPct', icon: 'zap' },
-      { factId: 'baLsVacancyPct', icon: 'flask-conical' },
-      { factId: 'roboticsSf', icon: 'factory' },
+      { factId: 'penOfficeAbsSf', icon: 'trending-up' },
+      { factId: 'sfOfficeQ2AbsSf', icon: 'trending-up' },
+      { factId: 'gsvOfficeAbsSf', icon: 'trending-up' },
+      { factId: 'penOfficeTimsMsf', icon: 'briefcase' },
     ],
   },
-  talent: {
+  exploding: {
     occupier: [
-      { factId: 'sfAiLeaseMsf', icon: 'building-2' },
+      { factId: 'penAiDemandMsf', icon: 'zap' },
+      { factId: 'penOfficeTimsMsf', icon: 'building-2' },
       { factId: 'baAiListingPct', icon: 'zap' },
       { factId: 'baRemoteListingPct', icon: 'users' },
-      { factId: 'aiSpecialtyTalent', icon: 'users' },
     ],
     owner: [
       { factId: 'sfOfficeAiActivityPct', icon: 'building-2' },
-      { factId: 'sfAiLeaseMsf', icon: 'zap' },
+      { factId: 'penAiDemandMsf', icon: 'zap' },
       { factId: 'baAiListingPct', icon: 'trending-up' },
       { factId: 'talentWorkforce', icon: 'users' },
     ],
     lender: [
       { factId: 'usAiVcShareSince2020Pct', icon: 'banknote' },
-      { factId: 'talentWorkforce', icon: 'users' },
-      { factId: 'sfAiLeaseCompanies', icon: 'briefcase' },
+      { factId: 'penAiDemandMsf', icon: 'zap' },
+      { factId: 'sfAiLeaseMsf', icon: 'briefcase' },
       { factId: 'ba500PersonCostUsd', icon: 'banknote' },
     ],
   },
@@ -140,39 +131,22 @@ const byScene: Record<string, Record<LensId, KpiSpec[]>> = {
   },
   'mission-bay': {
     occupier: [
-      { factId: 'mbChinaBasinAsking', icon: 'banknote' },
-      { factId: 'sfOfficeAsking', icon: 'building-2' },
+      { factId: 'mbOfficeFsg', icon: 'banknote' },
+      { factId: 'mbOfficeVacancyPct', icon: 'building-2' },
       { factId: 'mbLsVacancyPct', icon: 'flask-conical' },
       { factId: 'owens1450Sf', icon: 'map-pin' },
     ],
     owner: [
-      { factId: 'mbChinaBasinAsking', icon: 'banknote' },
+      { factId: 'mbOfficeFsg', icon: 'banknote' },
       { factId: 'mbLsVacancyPct', icon: 'flask-conical' },
       { factId: 'mbOfficeVacancyPct', icon: 'building-2' },
       { factId: 'owens1450Asking', icon: 'factory' },
     ],
     lender: [
       { factId: 'mbChinaBasinQtrAbsSf', icon: 'trending-up' },
-      { factId: 'mbChinaBasinYtdAbsSf', icon: 'trending-up' },
-      { factId: 'mbChinaBasinAsking', icon: 'banknote' },
+      { factId: 'mbOfficeNraSf', icon: 'building-2' },
+      { factId: 'mbOfficeFsg', icon: 'banknote' },
       { factId: 'mbLsVacancyPct', icon: 'flask-conical' },
-    ],
-  },
-  compression: {
-    occupier: [
-      { factId: 'sfOfficeDemandMsf', icon: 'building-2' },
-      { factId: 'sfOfficeAiPct', icon: 'zap' },
-      { factId: 'mbChinaBasinAsking', icon: 'banknote' },
-    ],
-    owner: [
-      { factId: 'mbChinaBasinAsking', icon: 'banknote' },
-      { factId: 'mbLsVacancyPct', icon: 'flask-conical' },
-      { factId: 'sfOfficeDemandMsf', icon: 'building-2' },
-    ],
-    lender: [
-      { factId: 'sfProjectedAbsMsf', icon: 'trending-up' },
-      { factId: 'mbChinaBasinAsking', icon: 'banknote' },
-      { factId: 'sfOfficeAiPct', icon: 'zap' },
     ],
   },
   power: {
@@ -204,7 +178,7 @@ const byScene: Record<string, Record<LensId, KpiSpec[]>> = {
       { factId: 'genesisMarinaVacancyPct', icon: 'building-2' },
     ],
     lender: [
-      { factId: 'q4NetAbsorptionSf', icon: 'trending-up' },
+      { factId: 'svQ2AbsSf', icon: 'trending-up' },
       { factId: 'penOfficeAbsSf', icon: 'trending-up' },
       { factId: 'mbChinaBasinQtrAbsSf', icon: 'trending-up' },
     ],

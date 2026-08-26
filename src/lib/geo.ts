@@ -54,6 +54,20 @@ export const highways: { id: string; name: string; shield: string; path: LngLat[
       [-122.4, 37.622],
     ],
   },
+  {
+    id: 'i-880',
+    name: 'I-880',
+    shield: '880',
+    path: [
+      [-122.271, 37.83],
+      [-122.268, 37.8],
+      [-122.26, 37.76],
+      [-122.24, 37.7],
+      [-122.2, 37.64],
+      [-122.1, 37.56],
+      [-122.02, 37.5],
+    ],
+  },
 ]
 
 export const highwayGeoJSON = {

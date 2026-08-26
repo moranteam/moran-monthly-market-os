@@ -10,12 +10,17 @@ const catalog: NavItem[] = [
   {
     sceneId: 'cover',
     title: 'Overview',
-    thesis: 'They have to be here for the talent. They want to be in the office. Vacant LS shells are the AI tour.',
+    thesis: 'Agenda: R&D, life science, office, exploding industries, funding, Mission Bay.',
   },
   {
-    sceneId: 'thesis',
-    title: 'The thesis (LS shells → AI)',
-    thesis: '150 Industrial, San Carlos: 230,961 SF former Novartis to a robotics user. Infrastructure was the sale.',
+    sceneId: 'markets',
+    title: 'Markets map',
+    thesis: 'Four overlays only — San Francisco, SF Peninsula, Silicon Valley, East Bay.',
+  },
+  {
+    sceneId: 'rnd',
+    title: 'SV R&D',
+    thesis: '135.2 msf. 13.3% vacant. +519k in Q2. Asking $2.84/sf NNN.',
   },
   {
     sceneId: 'leasing',
@@ -25,37 +30,27 @@ const catalog: NavItem[] = [
   {
     sceneId: 'office',
     title: 'Office',
-    thesis: 'Peninsula office is 23.8% vacant. That is not the AI product. Talent still comes in.',
+    thesis: 'Peninsula office is 24.9% vacant. SF is 29.2%. That is not the AI product.',
   },
   {
-    sceneId: 'product',
-    title: 'Product types',
-    thesis: 'High-powered AI tenant: 30 W/SF min, prefer 35–50+. That is the sell against vacant LS shells.',
+    sceneId: 'exploding',
+    title: 'Exploding / AI',
+    thesis: 'AI is 1.1 msf of 4.0 msf Peninsula TIMS. They want to be in the office.',
   },
   {
-    sceneId: 'talent',
-    title: 'AI & talent',
-    thesis: 'Bay Area is #1. 57% of listings are AI. Remote is 7%. 80% of U.S. AI VC since 2020.',
+    sceneId: 'power',
+    title: 'Power blueprint',
+    thesis: '30 W/SF minimum, prefer 35–50+. That is the sell against vacant LS shells.',
   },
   {
     sceneId: 'funding',
     title: 'Funding',
-    thesis: 'Q4 $47.42B. 2025 $187.68B. Tech 92.5%. LS is the residual. 80% of AI VC lands here.',
+    thesis: 'Q4 $47.42B. 2025 $187.68B. Tech 92.5%. 80% of AI VC lands here.',
   },
   {
     sceneId: 'mission-bay',
     title: 'Mission Bay',
-    thesis: 'Highest SF asking $7.37/sf FSG vs city $5.73/sf FSG. Overflow to Potrero / Dogpatch / Peninsula.',
-  },
-  {
-    sceneId: 'compression',
-    title: 'Compression',
-    thesis: 'Type sits over the bay. Mission Bay is compressed — overflow is Potrero / Dogpatch / Peninsula.',
-  },
-  {
-    sceneId: 'power',
-    title: 'Power',
-    thesis: '30 W/SF minimum, prefer 35–50+. Avia/Spur lab is 8 W/USF. 999 Baker is 27 / 40.',
+    thesis: '17.0% vacant. $9.33/sf FSG. 1450 Owens is the tour. Overflow to Potrero / Dogpatch / Peninsula.',
   },
   {
     sceneId: 'inventory',

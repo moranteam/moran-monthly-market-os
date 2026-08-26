@@ -55,13 +55,13 @@ export const BAY_CAMERA = {
   pitch: 28,
 }
 
-/** Full-bleed aerial: cities sit left; bay / empty land sit right under the scrim. */
+/** Full-bleed aerial: content covers the left ≥50%; cities sit in the remaining right half. */
 export const AERIAL_CAMERA = {
-  longitude: -122.08,
-  latitude: 37.6,
-  zoom: 9.05,
-  bearing: 14,
-  pitch: 38,
+  longitude: -122.3,
+  latitude: 37.56,
+  zoom: 9.15,
+  bearing: -8,
+  pitch: 36,
 }
 
 export const VALLEY_CAMERA = {

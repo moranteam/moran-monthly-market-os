@@ -1,7 +1,9 @@
 import { CityLabels } from '@/components/CityLabels'
+import { CompanyMark } from '@/components/CompanyMark'
 import { MapCallout } from '@/components/MapCallout'
 import type { MapPin } from '@/data/types'
-import { highwayGeoJSON } from '@/lib/geo'
+import { highways, highwayGeoJSON } from '@/lib/geo'
+import { clusterLayers, marketPolygons, ucsfCampus, universities } from '@/lib/marketsGeo'
 import { darkSatelliteStyle } from '@/lib/mapStyle'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { usePresenter } from '@/state/presenter'
@@ -16,9 +18,11 @@ type PersistentMapProps = {
 }
 
 export function PersistentMap({ pins, onPinClick }: PersistentMapProps) {
-  const { camera, veil, selectedId } = usePresenter()
+  const { camera, veil, selectedId, mapLayer } = usePresenter()
   const reduced = useReducedMotion()
   const mapRef = useRef<MapRef>(null)
+  const showClusters = clusterLayers.has(mapLayer)
+  const showCampus = mapLayer === 'mission-bay'
 
   useEffect(() => {
     const map = mapRef.current
@@ -45,6 +49,48 @@ export function PersistentMap({ pins, onPinClick }: PersistentMapProps) {
         reuseMaps
         style={{ width: '100%', height: '100%' }}
       >
+        {showClusters ? (
+          <Source id="markets" type="geojson" data={marketPolygons}>
+            <Layer
+              id="market-fill"
+              type="fill"
+              paint={{
+                'fill-color': ['get', 'color'],
+                'fill-opacity': 0.26,
+              }}
+            />
+            <Layer
+              id="market-line"
+              type="line"
+              paint={{
+                'line-color': ['get', 'color'],
+                'line-width': 2.2,
+                'line-opacity': 0.88,
+              }}
+            />
+          </Source>
+        ) : null}
+        {showCampus ? (
+          <Source id="ucsf-campus" type="geojson" data={ucsfCampus}>
+            <Layer
+              id="ucsf-fill"
+              type="fill"
+              paint={{
+                'fill-color': '#5ad4d4',
+                'fill-opacity': 0.22,
+              }}
+            />
+            <Layer
+              id="ucsf-line"
+              type="line"
+              paint={{
+                'line-color': '#5ad4d4',
+                'line-width': 2,
+                'line-opacity': 0.9,
+              }}
+            />
+          </Source>
+        ) : null}
         <Source id="highways" type="geojson" data={highwayGeoJSON}>
           <Layer
             id="highway-glow"
@@ -67,6 +113,28 @@ export function PersistentMap({ pins, onPinClick }: PersistentMapProps) {
           />
         </Source>
         <CityLabels />
+        {highways.map((road) => {
+          const mid = road.path[Math.floor(road.path.length / 2)]
+          return (
+            <Marker key={road.id} longitude={mid[0]} latitude={mid[1]} anchor="center">
+              <span className="pointer-events-none flex h-6 min-w-6 items-center justify-center rounded-sm border-2 border-paper bg-[#16306c] px-1 text-[11px] font-bold text-paper shadow-[0_2px_8px_rgba(0,0,0,0.45)]">
+                {road.shield}
+              </span>
+            </Marker>
+          )
+        })}
+        {showClusters || showCampus
+          ? universities
+              .filter((item) => (showCampus ? item.id === 'ucsf' : true))
+              .map((item) => (
+                <Marker key={item.id} longitude={item.lng} latitude={item.lat} anchor="center">
+                  <span className="pointer-events-none flex items-center gap-1 rounded-sm border border-paper/45 bg-[#06110e]/90 px-1.5 py-0.5 shadow-[0_4px_12px_rgba(0,0,0,0.45)]">
+                    <CompanyMark name={item.name} size="sm" />
+                    <span className="text-[11px] font-medium text-paper">{item.name}</span>
+                  </span>
+                </Marker>
+              ))
+          : null}
         {pins.map((pin) => (
           <Marker key={pin.id} longitude={pin.lng} latitude={pin.lat} anchor="center">
             <MapCallout

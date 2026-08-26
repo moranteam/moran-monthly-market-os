@@ -36,7 +36,7 @@ export function TwinMode() {
   return (
     <div className="flex h-full w-full bg-paper" onMouseMove={revealChrome}>
       <SectionNav />
-      <div className="grid h-full min-w-0 flex-1 grid-cols-[minmax(16.5rem,0.76fr)_minmax(22rem,1.28fr)]">
+      <div className="briefing-split h-full min-w-0 flex-1">
         <article className="briefing-rail flex h-full min-w-0 flex-col overflow-y-auto bg-paper px-5 pt-4 pb-10 text-ink">
           <p className="text-[12px] font-medium tracking-[0.16em] text-copper uppercase">Twin</p>
           <h1 className="mt-2 font-display text-[28px] leading-[1.05] text-ink">The corridor stays alive.</h1>

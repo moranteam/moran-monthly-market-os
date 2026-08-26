@@ -1,1 +1,101 @@
-[{"id":"cover","number":"01","title":"Overview","kicker":"Open","map":"bay","veil":0.16,"spine":"bay"},{"id":"thesis","number":"02","title":"The thesis","kicker":"LS shells \u2192 AI","map":"thesis","veil":0.08,"spine":"peninsula"},{"id":"leasing","number":"03","title":"Life science","kicker":"Science","map":"leasing","veil":0.1,"spine":"south-sf"},{"id":"office","number":"04","title":"Office","kicker":"Office","map":"office","veil":0.14,"spine":"peninsula"},{"id":"product","number":"05","title":"Product types","kicker":"Spec","map":"product","veil":0.12,"spine":"bay"},{"id":"talent","number":"06","title":"AI & talent","kicker":"Talent","map":"talent","veil":0.1,"spine":"mission-bay"},{"id":"funding","number":"07","title":"Funding","kicker":"Venture","map":"funding","veil":0.12,"spine":"bay"},{"id":"mission-bay","number":"08","title":"Mission Bay","kicker":"Waterfront","map":"mission-bay","veil":0.04,"spine":"mission-bay"},{"id":"compression","number":"09","title":"Compression","kicker":"Aerial","map":"compression","veil":0.04,"spine":"bay"},{"id":"power","number":"10","title":"Power","kicker":"Chapter","map":"power","veil":0.18,"spine":"peninsula"},{"id":"inventory","number":"11","title":"Live inventory","kicker":"Assets","map":"inventory","veil":0.1,"spine":"bay"},{"id":"decision","number":"12","title":"Decision","kicker":"Close","map":"bay","veil":0.12,"spine":"bay"}]
+[
+  {
+    "id": "cover",
+    "number": "01",
+    "title": "Overview",
+    "kicker": "Agenda",
+    "map": "markets",
+    "veil": 0.12,
+    "spine": "bay"
+  },
+  {
+    "id": "markets",
+    "number": "02",
+    "title": "Markets",
+    "kicker": "Four geos",
+    "map": "markets",
+    "veil": 0.1,
+    "spine": "bay"
+  },
+  {
+    "id": "rnd",
+    "number": "03",
+    "title": "Silicon Valley R&D",
+    "kicker": "R&D",
+    "map": "rnd",
+    "veil": 0.1,
+    "spine": "silicon-valley"
+  },
+  {
+    "id": "leasing",
+    "number": "04",
+    "title": "Life science",
+    "kicker": "Science",
+    "map": "leasing",
+    "veil": 0.1,
+    "spine": "south-sf"
+  },
+  {
+    "id": "office",
+    "number": "05",
+    "title": "Office",
+    "kicker": "Office",
+    "map": "office",
+    "veil": 0.12,
+    "spine": "peninsula"
+  },
+  {
+    "id": "exploding",
+    "number": "06",
+    "title": "Exploding industries",
+    "kicker": "AI",
+    "map": "exploding",
+    "veil": 0.1,
+    "spine": "peninsula"
+  },
+  {
+    "id": "power",
+    "number": "07",
+    "title": "Power",
+    "kicker": "Blueprint",
+    "map": "power",
+    "veil": 0.16,
+    "spine": "peninsula"
+  },
+  {
+    "id": "funding",
+    "number": "08",
+    "title": "Funding",
+    "kicker": "Venture",
+    "map": "funding",
+    "veil": 0.12,
+    "spine": "bay"
+  },
+  {
+    "id": "mission-bay",
+    "number": "09",
+    "title": "Mission Bay",
+    "kicker": "Waterfront",
+    "map": "mission-bay",
+    "veil": 0.04,
+    "spine": "mission-bay"
+  },
+  {
+    "id": "inventory",
+    "number": "10",
+    "title": "Live inventory",
+    "kicker": "Assets",
+    "map": "inventory",
+    "veil": 0.1,
+    "spine": "bay"
+  },
+  {
+    "id": "decision",
+    "number": "11",
+    "title": "Decision",
+    "kicker": "Close",
+    "map": "markets",
+    "veil": 0.12,
+    "spine": "bay"
+  }
+]

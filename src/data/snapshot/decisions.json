@@ -1,1 +1,20 @@
-[{"id":"occupier","role":"Occupier","question":"Which vacant LS shell can you occupy this quarter?","line":"Tour product with power, MEP, and adjacency \u2014 not the vacancy rate. 150 Industrial is the proof: 230,961 SF, former Novartis, robotics user, six high-credit groups in process. Peninsula office is still 23.8% vacant. Mission Bay office is 22.7% vacant; the LS block is 51.9%."},{"id":"owner","role":"Owner","question":"Can this vacant science building become the AI tour?","line":"Conversion only works if transformer capacity and cooling are real. AI office wants 3\u20135\u00d7 standard office power and 2\u00d7 CFM. Advanced R&D wants 2\u20133\u00d7 power per SF plus clean-room HVAC. A CGT/GLP-1 shell that already has that MEP is the bid. Commodity office is residual."},{"id":"lender","role":"Lender","question":"Whose clock is the takeout on?","line":"Underwrite delivery timing. Bay Area still takes 80% of U.S. AI VC since 2020, and 57% of local tech listings are AI. That is not a bid for every empty lab. Mission Bay LS at 51.9% vacant is a different credit than 16-year UCSF paper or a robotics full-building at 150 Industrial."}]
+[
+  {
+    "id": "occupier",
+    "role": "Occupier",
+    "question": "Which vacant LS shell can you occupy this quarter?",
+    "line": "Tour product with power, MEP, and adjacency — not the vacancy rate. 150 Industrial is the proof: 230,961 SF, former Novartis, robotics user, six high-credit groups in process. Peninsula office is 24.9% vacant. Mission Bay / China Basin office is 17.0% vacant; the LS block is still 51.9%."
+  },
+  {
+    "id": "owner",
+    "role": "Owner",
+    "question": "Can this vacant science building become the AI tour?",
+    "line": "Conversion only works if transformer capacity and cooling are real. AI office wants 3–5× standard office power and 2× CFM. Advanced R&D wants 2–3× power per SF plus clean-room HVAC. A CGT/GLP-1 shell that already has that MEP is the bid. Commodity office is residual."
+  },
+  {
+    "id": "lender",
+    "role": "Lender",
+    "question": "Whose clock is the takeout on?",
+    "line": "Underwrite delivery timing. Bay Area still takes 80% of U.S. AI VC since 2020, and 57% of local tech listings are AI. That is not a bid for every empty lab. Mission Bay LS at 51.9% vacant is a different credit than 16-year UCSF paper or a robotics full-building at 150 Industrial."
+  }
+]

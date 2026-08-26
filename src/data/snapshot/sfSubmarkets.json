@@ -1,0 +1,12 @@
+[
+  { "id": "n-fidi", "name": "North FiDi", "vacancyPct": 31.2, "askingAnnual": 72.93, "absSf": -77000 },
+  { "id": "s-fidi", "name": "South FiDi", "vacancyPct": 24.4, "askingAnnual": 80.37, "absSf": 455000 },
+  { "id": "jackson", "name": "Jackson Square", "vacancyPct": 20.3, "askingAnnual": 70.99, "absSf": 66000 },
+  { "id": "soma", "name": "SoMa", "vacancyPct": 33.9, "askingAnnual": 73.76, "absSf": 163000 },
+  { "id": "yerba", "name": "Yerba Buena", "vacancyPct": 62.7, "askingAnnual": 66.69, "absSf": -17000 },
+  { "id": "soma-west", "name": "SoMa West", "vacancyPct": 39.1, "askingAnnual": 49.44, "absSf": 491000, "note": "City of SF 502,082 at 1455 Market" },
+  { "id": "mission-bay", "name": "Mission Bay / China Basin", "vacancyPct": 17.0, "askingAnnual": 111.93, "absSf": -151000 },
+  { "id": "potrero", "name": "Potrero", "vacancyPct": 23.9, "askingAnnual": 54.28, "absSf": 2000 },
+  { "id": "civic", "name": "Civic Center", "vacancyPct": 23.1, "askingAnnual": 43.17, "absSf": -1000 },
+  { "id": "union", "name": "Union Square", "vacancyPct": 26.8, "askingAnnual": 52.79, "absSf": 32000 }
+]

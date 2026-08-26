@@ -1,0 +1,12 @@
+[
+  { "id": "fremont", "name": "Fremont / Newark", "nraSf": 22340000, "vacancyPct": 11.3, "askingNnn": 1.96, "q2AbsSf": 159000, "ytdAbsSf": 81000, "ucSf": 0, "deliveredSf": 0 },
+  { "id": "milpitas", "name": "Milpitas", "nraSf": 11090000, "vacancyPct": 16.3, "askingNnn": 2.42, "q2AbsSf": -127000, "ytdAbsSf": -197000, "ucSf": 0, "deliveredSf": 0 },
+  { "id": "mv", "name": "Mountain View / Los Altos", "nraSf": 10580000, "vacancyPct": 17.6, "askingNnn": 4.38, "q2AbsSf": 48000, "ytdAbsSf": -49000, "ucSf": 0, "deliveredSf": 0 },
+  { "id": "palo-alto", "name": "Palo Alto", "nraSf": 10920000, "vacancyPct": 18.1, "askingNnn": 4.84, "q2AbsSf": 309000, "ytdAbsSf": -604000, "ucSf": 0, "deliveredSf": 0, "note": "GM 350k" },
+  { "id": "sj-ibp", "name": "SJ IBP / Downtown", "nraSf": 8930000, "vacancyPct": 7.0, "askingNnn": 1.73, "q2AbsSf": 43000, "ytdAbsSf": -127000, "ucSf": 0, "deliveredSf": 137000 },
+  { "id": "sj-north", "name": "SJ North", "nraSf": 22600000, "vacancyPct": 16.9, "askingNnn": 2.76, "q2AbsSf": -430000, "ytdAbsSf": -796000, "ucSf": 333000, "deliveredSf": 0 },
+  { "id": "sj-south", "name": "SJ South", "nraSf": 8820000, "vacancyPct": 12.9, "askingNnn": 1.61, "q2AbsSf": 169000, "ytdAbsSf": 250000, "ucSf": 0, "deliveredSf": 0, "note": "SK Hynix 110,542" },
+  { "id": "santa-clara", "name": "Santa Clara", "nraSf": 18350000, "vacancyPct": 12.7, "askingNnn": 2.39, "q2AbsSf": 121000, "ytdAbsSf": 78000, "ucSf": 243000, "deliveredSf": 0 },
+  { "id": "sunnyvale", "name": "Sunnyvale", "nraSf": 17540000, "vacancyPct": 8.7, "askingNnn": 2.93, "q2AbsSf": 223000, "ytdAbsSf": 250000, "ucSf": 364000, "deliveredSf": 0, "note": "Rhoda AI, Apptronik, Cerebras" },
+  { "id": "west-valley", "name": "West Valley", "nraSf": 4040000, "vacancyPct": 8.3, "askingNnn": 2.48, "q2AbsSf": 3000, "ytdAbsSf": -31000, "ucSf": 0, "deliveredSf": 0 }
+]

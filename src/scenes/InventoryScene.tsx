@@ -39,7 +39,7 @@ export function InventoryScene() {
       title="Vacant shells and Mission Bay overflow."
       thesis={
         takeaway ??
-        'Name the vacant new-construction product. 150 Industrial is a closed robotics deal. Mission Rock B is signed.'
+        'Name the vacant new-construction product. 150 Industrial is a closed robotics deal to an unnamed user. Mission Rock B is signed.'
       }
       kpis={kpis}
     >

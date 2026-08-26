@@ -1,32 +1,24 @@
 import { BriefingRail, SpokenFacts } from '@/components/BriefingRail'
-import { NameWithMark } from '@/components/CompanyMark'
-import { PhotoPlate } from '@/components/PhotoPlate'
+import { ChatterBoard } from '@/components/ChatterBoard'
+import { ClusterTable } from '@/components/ClusterTable'
+import { LeaseCompStrip } from '@/components/LeaseCompStrip'
 import { VacantShellList } from '@/components/VacantShellList'
 import { GroupedBars } from '@/components/charts/GroupedBars'
-import { fact, propertyById, snapshot } from '@/data/load'
-import { useVisibleComps } from '@/hooks/useVisibleComps'
+import { compsBySet, fact, snapshot } from '@/data/load'
+import { formatFact, formatPercent } from '@/lib/format'
 import { kpisFor } from '@/lib/kpis'
-import { formatCompRent, formatFact, formatPercent, formatSf } from '@/lib/format'
+import { LEASING_CAMERA } from '@/lib/mapStyle'
 import { usePresenter } from '@/state/presenter'
 import { useEffect } from 'react'
 
 export function LeasingScene() {
-  const { selectedId, setSelectedId, setCamera, takeaway, lens } = usePresenter()
-  const comps = useVisibleComps('ls-new')
-  const selected = comps.find((item) => item.id === selectedId)
-  const selectedProperty = selected?.propertyId ? propertyById(selected.propertyId) : undefined
+  const { setCamera, takeaway, lens, mode } = usePresenter()
+  const comps = compsBySet('ls-new', mode === 'share')
+  const kpis = kpisFor('leasing', lens).map((item) => ({ fact: fact(item.factId), icon: item.icon }))
 
   useEffect(() => {
-    if (!selectedProperty) return
-    setCamera({
-      longitude: selectedProperty.lng,
-      latitude: selectedProperty.lat,
-      zoom: 13,
-      pitch: 38,
-      bearing: -8,
-    })
-  }, [selectedProperty, setCamera])
-  const kpis = kpisFor('leasing', lens).map((item) => ({ fact: fact(item.factId), icon: item.icon }))
+    setCamera({ ...LEASING_CAMERA })
+  }, [setCamera])
 
   const markets = snapshot.lifeScienceMarkets.map((market) => {
     const vacancy = fact(market.vacancyFact)
@@ -44,7 +36,6 @@ export function LeasingScene() {
   return (
     <BriefingRail
       kicker="Life science"
-      emoji="🧪"
       title="The leftover shells are the inventory."
       thesis={
         takeaway ??
@@ -52,8 +43,9 @@ export function LeasingScene() {
       }
       kpis={kpis}
     >
+      <ClusterTable product="ls" />
       <GroupedBars
-        caption="Life science · vacancy vs asking"
+        caption="Life science · vacancy vs asking · Q4 2025 snapshot"
         series={[
           { key: 'vacancy', label: 'Vacancy', tone: 'vacancy' },
           { key: 'asking', label: 'Asking / rent', tone: 'asking' },
@@ -69,7 +61,7 @@ export function LeasingScene() {
       />
       <SpokenFacts
         items={[
-          `Bay Area science: ${formatFact(fact('baLsInventoryMsf'))}, ${formatFact(fact('baLsVacancyPct'))} vacant, ${formatFact(fact('baLsAskingNnn'))}. Developers and capital partners are sitting on vacant high-infrastructure R&D — power, HVAC, floor load, docks, clean-room-capable MEP.`,
+          `Bay Area science: ${formatFact(fact('baLsInventoryMsf'))}, ${formatFact(fact('baLsVacancyPct'))} vacant, ${formatFact(fact('baLsAskingNnn'))}. This life-science block is still the Q4 2025 / Q1 2026 cluster print — we did not invent a Q2 science quarterly.`,
           `Northern Peninsula ${formatFact(fact('nPenLsInventoryMsf'))} at ${formatFact(fact('nPenLsVacancyPct'))} vacant · ${formatFact(fact('nPenLsAskingNnn'))}. Central Peninsula ${formatFact(fact('cPenLsInventoryMsf'))} at ${formatFact(fact('cPenLsVacancyPct'))} vacant · ${formatFact(fact('cPenLsAskingNnn'))}.`,
           'The paper that still printed is purpose-built: UCSF 280,472 SF at Kilroy Oyster Point Phase II, $5.85/sf NNN, 16.5 years.',
           'Natera 62,969 SF at Brittan West, San Carlos, $5.50/sf NNN (1/23/26).',
@@ -80,52 +72,8 @@ export function LeasingScene() {
         caption="Vacant new-construction LS shells · overbuild proof"
         includeContrast
       />
-      <div className="grid gap-2">
-        {comps.map((item) => {
-          const asset = item.propertyId ? propertyById(item.propertyId) : undefined
-          const on = selectedId === item.id
-          return (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => setSelectedId(on ? null : item.id)}
-              className={`flex gap-3 border p-2 text-left ${
-                on ? 'border-copper bg-white' : 'border-ink/10 bg-white/50 hover:border-ink/25'
-              }`}
-            >
-              {asset ? (
-                <PhotoPlate
-                  name={asset.name}
-                  address={asset.address}
-                  city={asset.city}
-                  photoUrl={asset.photoUrl}
-                  className="h-16 w-16"
-                />
-              ) : (
-                <PhotoPlate name={item.tenant} className="h-16 w-16" />
-              )}
-              <span className="min-w-0">
-                <span className="block text-[16px] text-ink">
-                  <NameWithMark name={item.tenant} size="lg" unnamed={item.confidential && !item.tenant} />
-                  {item.confidential ? ' · confidential' : ''}
-                </span>
-                <span className="block text-[13px] text-ink/55">
-                  {asset ? `${asset.name} · ${asset.city}` : 'Address not restated'}
-                  {item.owner ? (
-                    <span className="ml-2 inline-flex items-center gap-1">
-                      · <NameWithMark name={item.owner} />
-                    </span>
-                  ) : null}
-                </span>
-                <span className="mt-1 block tabular text-[14px] text-ink">
-                  {formatSf(item.areaLeasedSf, true)}
-                  {formatCompRent(item) ? ` · ${formatCompRent(item)}` : ''}
-                </span>
-              </span>
-            </button>
-          )
-        })}
-      </div>
+      <ChatterBoard />
+      <LeaseCompStrip caption="Life science lease transactions · new construction" comps={comps} />
     </BriefingRail>
   )
 }

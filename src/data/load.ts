@@ -1,7 +1,51 @@
-import raw from './snapshot.json'
+import cases from './snapshot/cases.json'
+import chatter from './snapshot/chatter.json'
+import comps from './snapshot/comps.json'
+import corridors from './snapshot/corridors.json'
+import decisions from './snapshot/decisions.json'
+import demand from './snapshot/demand.json'
+import facts from './snapshot/facts.json'
+import funding from './snapshot/funding.json'
+import lenses from './snapshot/lenses.json'
+import lifeScienceMarkets from './snapshot/lifeScienceMarkets.json'
+import meta from './snapshot/meta.json'
+import missionBay from './snapshot/missionBay.json'
+import modes from './snapshot/modes.json'
+import power from './snapshot/power.json'
+import previous from './snapshot/previous.json'
+import productSpec from './snapshot/productSpec.json'
+import properties from './snapshot/properties.json'
+import scenes from './snapshot/scenes.json'
+import submarkets from './snapshot/submarkets.json'
+import talent from './snapshot/talent.json'
+import thesis from './snapshot/thesis.json'
+import vacantShells from './snapshot/vacantShells.json'
 import type { ChatterItem, Comp, CompSet, Snapshot } from './types'
 
-export const snapshot = raw as Snapshot
+export const snapshot = {
+  meta,
+  facts,
+  corridors,
+  submarkets,
+  properties,
+  comps,
+  funding,
+  demand,
+  lifeScienceMarkets,
+  missionBay,
+  productSpec,
+  vacantShells,
+  thesis,
+  talent,
+  cases,
+  chatter,
+  power,
+  decisions,
+  scenes,
+  previous,
+  lenses,
+  modes,
+} as Snapshot
 
 export function isShareMode(mode: string) {
   return mode === 'share' || mode === 'leave'

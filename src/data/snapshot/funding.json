@@ -1,0 +1,7 @@
+[
+  { "id": "f1", "company": "Aether Robotics", "round": "Series B", "amountM": 180, "date": "2026-07", "hq": "SoMa", "sector": "Physical AI / robotics", "implication": "Real lab + light-industrial adjacency, not just desk density." },
+  { "id": "f2", "company": "Helix BioWorks", "round": "Series C", "amountM": 240, "date": "2026-06", "hq": "Mission Bay", "sector": "Life science / platform", "implication": "Confirms Mission Bay as the only submarket still competing on science, not just rent." },
+  { "id": "f3", "company": "Northwind Climate", "round": "Growth", "amountM": 95, "date": "2026-05", "hq": "FiDi", "sector": "Climate / infrastructure software", "implication": "Flight-to-quality tenant; will pay for building systems and power." },
+  { "id": "f4", "company": "Parcel AI", "round": "Series A", "amountM": 42, "date": "2026-07", "hq": "East Bay", "sector": "Logistics AI", "implication": "Headquarters may stay East Bay; SF is a talent/customer office, not an HQ." },
+  { "id": "f5", "company": "Lumen Defense", "round": "Series B", "amountM": 110, "date": "2026-04", "hq": "South SF", "sector": "Defense / dual-use", "implication": "Security and power specs matter more than amenity narrative." }
+]

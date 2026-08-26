@@ -1,0 +1,5 @@
+[
+  { "id": "brief", "label": "Brief", "hint": "Read it like a memo." },
+  { "id": "tour", "label": "Tour", "hint": "Walk the corridors and assets." },
+  { "id": "underwrite", "label": "Underwrite", "hint": "Comps, shells, demand." }
+]

@@ -1,0 +1,22 @@
+{
+  "title": "What still leases",
+  "intro": "Not a vibe. A spec. If the building cannot clear this bar, it is a conversion or a hold — not a lease-up.",
+  "mustHaves": [
+    { "id": "mh1", "label": "Floor plate", "detail": "18–28k RSF typical; larger plates need a campus story." },
+    { "id": "mh2", "label": "Power", "detail": "6–8+ W/sf delivered, with a path to 12+ on AI / lab floors." },
+    { "id": "mh3", "label": "HVAC / air", "detail": "Modern VAV or lab-capable; operable story if you can tell it honestly." },
+    { "id": "mh4", "label": "Arrival", "detail": "Lobby, security, and street that a VP will walk a candidate through." },
+    { "id": "mh5", "label": "Stacking", "detail": "Contiguous 2–4 floors beats scattered remainder." }
+  ],
+  "niceToHaves": [
+    "Outdoor / terrace",
+    "Bike + shower",
+    "Retail that is actually open",
+    "Transit < 5 min walk"
+  ],
+  "dealKillers": [
+    "Single-stair / life-safety that blocks conversion or densification",
+    "Landlord who will not spend on systems",
+    "Ground-floor vacancy that reads as abandonment"
+  ]
+}

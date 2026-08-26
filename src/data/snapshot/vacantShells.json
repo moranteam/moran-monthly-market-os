@@ -1,0 +1,6 @@
+[
+  { "id": "vs1", "building": "One Market Plaza — Spear Tower", "floors": "18–21", "ksf": 92, "condition": "Warm vanilla, recent vacate", "blocker": "Stacking / remaining term elsewhere" },
+  { "id": "vs2", "building": "525 Market", "floors": "12–14", "ksf": 61, "condition": "Needs HVAC refresh", "blocker": "Capex vs rent" },
+  { "id": "vs3", "building": "201 Spear", "floors": "7–9", "ksf": 48, "condition": "Dark, furniture-in", "blocker": "Landlord decisioning" },
+  { "id": "vs4", "building": "Pacific Gas & Electric HQ adjacency", "floors": "select", "ksf": 36, "condition": "Older plate", "blocker": "Life safety / single stair questions" }
+]

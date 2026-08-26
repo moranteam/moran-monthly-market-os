@@ -1,0 +1,5 @@
+[
+  { "id": "ls1", "name": "Mission Bay", "vacancyPct": 12.4, "askingRentPsf": 96, "note": "Tightest; campus + hospital adjacency." },
+  { "id": "ls2", "name": "South San Francisco", "vacancyPct": 21.8, "askingRentPsf": 82, "note": "More inventory; still the regional lab core." },
+  { "id": "ls3", "name": "Peninsula overlay", "vacancyPct": 18.2, "askingRentPsf": 78, "note": "Watch for overflow, not a substitute." }
+]

@@ -1,0 +1,5 @@
+[
+  { "id": "p1", "actor": "Lenders", "want": "A use that clears DSCR or a conversion plan with capital." },
+  { "id": "p2", "actor": "Sponsors", "want": "Time and a bid — quality or a different use." },
+  { "id": "p3", "actor": "Tenants", "want": "Floors that work on Monday, not a narrative." }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "market",
+    "name": "Market Street",
+    "from": "Embarcadero",
+    "to": "Van Ness",
+    "oneLiner": "The civic spine. Transit-rich, street-level still uneven, office above is a quality barbell.",
+    "whatToNotice": ["BART/Muni nodes vs dead blocks", "trophy vs conversion feedstock", "retail ground-floor recovery"]
+  },
+  {
+    "id": "second",
+    "name": "2nd Street",
+    "from": "Market",
+    "to": "King",
+    "oneLiner": "SoMa's north-south cut. Tech heritage, now a mix of flight-to-quality and vacancy.",
+    "whatToNotice": ["Salesforce / Transbay adjacency", "older mid-rise vacancy", "conversion candidates"]
+  },
+  {
+    "id": "third",
+    "name": "3rd Street",
+    "from": "Market",
+    "to": "Mission Bay",
+    "oneLiner": "The connector from CBD to the campus. Watch the quality step-change as you go south.",
+    "whatToNotice": ["Oracle Park adjacency", "UCSF / Mission Bay approach", "industrial-to-lab edges"]
+  }
+]

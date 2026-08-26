@@ -1,0 +1,57 @@
+[
+  {
+    "id": "soma",
+    "name": "SoMa",
+    "role": "CBD overflow + conversion pipeline",
+    "vacancyPct": 31.8,
+    "askingRentPsf": 62,
+    "notes": [
+      "Highest vacancy and the deepest conversion pipeline.",
+      "Trophy still holds; B/C is the conversion feedstock."
+    ]
+  },
+  {
+    "id": "fidi",
+    "name": "FiDi",
+    "role": "Financial core + flight-to-quality",
+    "vacancyPct": 27.4,
+    "askingRentPsf": 68,
+    "notes": [
+      "Flight-to-quality is most visible here.",
+      "Trophy leases; commodity floors sit."
+    ]
+  },
+  {
+    "id": "mission-bay",
+    "name": "Mission Bay",
+    "role": "Lab / campus / life-science adjacency",
+    "vacancyPct": 18.6,
+    "askingRentPsf": 74,
+    "notes": [
+      "Tightest submarket; campus and lab adjacency still price.",
+      "Not a volume play — a quality + adjacency play."
+    ]
+  },
+  {
+    "id": "mid-market",
+    "name": "Mid-Market",
+    "role": "Value + civic adjacency",
+    "vacancyPct": 29.1,
+    "askingRentPsf": 54,
+    "notes": [
+      "Value bid exists; street-level and safety narrative still discounts the block.",
+      "Better as a selective value sleeve than a thesis."
+    ]
+  },
+  {
+    "id": "south-beach",
+    "name": "South Beach",
+    "role": "Waterfront amenity + residential adjacency",
+    "vacancyPct": 22.9,
+    "askingRentPsf": 71,
+    "notes": [
+      "Amenity and waterfront still support occupancy.",
+      "Thinner inventory; more of a hold/harvest than a buy."
+    ]
+  }
+]

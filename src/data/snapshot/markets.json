@@ -13,6 +13,8 @@
     "officeAskFact": "sfOfficeAsking",
     "officeAbsFact": "sfOfficeQ2AbsSf",
     "rndVacFact": null,
+    "rndAskFact": null,
+    "rndAbsFact": null,
     "lsVacFact": "baLsVacancyPct",
     "line": "29.2% vacant. First time under 30% since Q1 2023. TIMS 8.9 msf."
   },
@@ -30,6 +32,8 @@
     "officeAskFact": "penOfficeFsg",
     "officeAbsFact": "penOfficeAbsSf",
     "rndVacFact": null,
+    "rndAskFact": null,
+    "rndAbsFact": null,
     "lsVacFact": "nPenLsVacancyPct",
     "line": "24.9% vacant. AI is 1.1 msf of 4.0 msf TIMS."
   },
@@ -47,6 +51,8 @@
     "officeAskFact": "gsvOfficeFsg",
     "officeAbsFact": "gsvOfficeAbsSf",
     "rndVacFact": "svVacancyPct",
+    "rndAskFact": "svAvgAskingNnn",
+    "rndAbsFact": "svQ2AbsSf",
     "lsVacFact": "cPenLsVacancyPct",
     "line": "Office 15.2% · R&D 13.3%. Demand 9.3 msf office + R&D."
   },
@@ -64,6 +70,8 @@
     "officeAskFact": "oakOfficeFsg",
     "officeAbsFact": "oakOfficeAbsSf",
     "rndVacFact": "oakRndVacancyPct",
+    "rndAskFact": "oakRndNnn",
+    "rndAbsFact": "oakRndAbsSf",
     "lsVacFact": null,
     "line": "Oakland office 25.7%. Oakland R&D 18.5%, pipeline cleared."
   }

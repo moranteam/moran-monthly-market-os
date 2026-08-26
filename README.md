@@ -19,7 +19,7 @@ npm run dev
 
 Opens at [http://127.0.0.1:43173](http://127.0.0.1:43173).
 
-Production: [https://moran-monthly-market-os.vercel.app](https://moran-monthly-market-os.vercel.app)
+Production: [https://moran-q2-2026-briefing.vercel.app](https://moran-q2-2026-briefing.vercel.app)
 
 ## Modes
 

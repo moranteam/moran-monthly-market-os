@@ -1,5 +1,1 @@
-[
-  { "id": "tal1", "signal": "Return-to-office is a manager tool, not a city recovery.", "implication": "Trophy buildings win the days people actually come in." },
-  { "id": "tal2", "signal": "AI labs hire density + power, not headcount theater.", "implication": "Watch watts and contiguous floors more than badge-swipe headlines." },
-  { "id": "tal3", "signal": "Life science talent still clusters around UCSF / Mission Bay.", "implication": "That submarket is a different bid entirely." }
-]
+{"thesis":"They have to be here for the talent, and they want to be in the office. Power is why they sign the vacant LS product.","asOf":"Aug 2026 \u00b7 Scoring Tech Talent + Feb 3 AI leasing","aiLeaseNodes":[{"id":"south-fin","name":"South Financial","companies":71,"sf":1580000},{"id":"soma","name":"SoMa","companies":45,"sf":1210000},{"id":"mb-cb","name":"Mission Bay / China Basin","companies":6,"sf":862000},{"id":"potrero","name":"Potrero","companies":32,"sf":786000},{"id":"north-fin","name":"North Financial","companies":60,"sf":846000}]}

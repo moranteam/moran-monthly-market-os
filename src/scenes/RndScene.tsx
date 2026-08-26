@@ -1,16 +1,19 @@
 import { BriefingRail, SpokenFacts } from '@/components/BriefingRail'
 import { ClusterTable } from '@/components/ClusterTable'
+import { NameWithMark } from '@/components/CompanyMark'
+import { LeaseCompStrip } from '@/components/LeaseCompStrip'
 import { SubmarketTable } from '@/components/SubmarketTable'
 import { VColumnChart } from '@/components/charts/VColumnChart'
-import { fact } from '@/data/load'
-import { formatFact, formatPercent } from '@/lib/format'
+import { fact, oaklandRndFigureComps, snapshot, svRndFigureComps } from '@/data/load'
+import { formatFact, formatPercent, formatSf } from '@/lib/format'
 import { kpisFor } from '@/lib/kpis'
 import { VALLEY_CAMERA } from '@/lib/mapStyle'
 import { usePresenter } from '@/state/presenter'
 import { useEffect } from 'react'
 
 export function RndScene() {
-  const { setCamera, takeaway, lens } = usePresenter()
+  const { setCamera, takeaway, lens, mode } = usePresenter()
+  const share = mode === 'share'
   const kpis = kpisFor('rnd', lens).map((item) => ({ fact: fact(item.factId), icon: item.icon }))
 
   useEffect(() => {
@@ -23,7 +26,7 @@ export function RndScene() {
       title="The empty boxes are still the product."
       thesis={
         takeaway ??
-        '135.2 msf. 13.3% vacant. +519k in Q2. Asking $2.84/sf NNN. 940k under construction — the table print, not the 1.26 msf preleased pipeline note.'
+        '135.2 msf. 13.3% vacant. +519k in Q2. Asking $2.84/sf NNN. 940,214 under construction — Intuitive 364k, Supermicro 333k, Arista 243k.'
       }
       kpis={kpis}
     >
@@ -75,15 +78,34 @@ export function RndScene() {
           ]}
         />
       </div>
+      <div className="overflow-hidden border border-ink/12 bg-white">
+        <p className="border-b border-ink/10 px-3 py-2 text-[12px] font-medium tracking-[0.14em] text-ink/50 uppercase">
+          Named UC pipeline · header {formatFact(fact('svUnderConstructionSf'))}
+        </p>
+        <ul className="divide-y divide-ink/8">
+          {snapshot.svRndPipeline.map((item) => (
+            <li key={item.id} className="flex items-center justify-between gap-3 px-3 py-2 text-[13px]">
+              <span className="flex items-center gap-2 font-medium text-ink">
+                <NameWithMark name={item.name} size="sm" />
+                <span className="text-[12px] font-normal text-ink/50">{item.place}</span>
+              </span>
+              <span className="tabular text-ink">{formatSf(item.sf, true)}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
       <SpokenFacts
         items={[
           `Inventory ${formatFact(fact('svTotalNraSf'))}. Vacancy ${formatFact(fact('svVacancyPct'))} (−30 bps QoQ, +100 bps YoY). Asking ${formatFact(fact('svAvgAskingNnn'))}.`,
           `Q2 absorption ${formatFact(fact('svQ2AbsSf'))}. YTD still ${formatFact(fact('svYtdAbsSf'))}. Leasing ${formatFact(fact('svLeasingMsf'))}, ${formatFact(fact('svLeasingQoqPct'))} QoQ.`,
-          `Delivered ${formatFact(fact('svDeliveredSf'))}. Under construction ${formatFact(fact('svUnderConstructionSf'))} from the table. Body copy also cites 1.26 msf all preleased in Sunnyvale / SJ-North / Santa Clara — we print 940k.`,
+          `Delivered ${formatFact(fact('svDeliveredSf'))}. Under construction ${formatFact(fact('svUnderConstructionSf'))} — Intuitive 364k Sunnyvale, Supermicro 333k Brokaw, Arista 243k Santa Clara.`,
           `Oakland R&D ${formatFact(fact('oakRndVacancyPct'))} vacant, ${formatFact(fact('oakRndAbsSf'))}, asking ${formatFact(fact('oakRndNnn'))}. Emeryville ${formatFact(fact('oakEmeryvilleVac'))}. San Leandro ${formatFact(fact('oakSanLeandroVac'))}.`,
         ]}
       />
       <SubmarketTable product="rnd" />
+      <SubmarketTable product="oak-rnd" />
+      <LeaseCompStrip caption="Silicon Valley R&D Figure comps" comps={svRndFigureComps(share)} />
+      <LeaseCompStrip caption="Oakland R&D Figure comps" comps={oaklandRndFigureComps(share)} />
     </BriefingRail>
   )
 }

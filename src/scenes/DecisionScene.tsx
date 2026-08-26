@@ -50,8 +50,8 @@ export function DecisionScene() {
       </div>
       <SpokenFacts
         items={[
-          `${snapshot.meta.asOfLabel}. Market layer ${snapshot.meta.marketAsOf}. Power working layer ${snapshot.meta.powerAsOf} — older, do not mix.`,
-          'Talent prints are August 2026 Scoring Tech Talent. Mission Bay block prints are Moran-Bennett Q4 2025. AI leasing nodes are the February 3 deck.',
+          `${snapshot.meta.asOfLabel}. Office and R&D prints are Q2 2026. Life-science vacancy is still the Q4 2025 / Q1 2026 cluster. Power working layer ${snapshot.meta.powerAsOf} — older, do not mix.`,
+          'Talent prints are August 2026 Scoring Tech Talent. Mission Bay LS is Moran-Bennett Q4 2025. Mission Bay office vacancy is the Q2 2026 pack — 17.0%, not 22.7%.',
         ]}
       />
       <div className="grid gap-1.5">

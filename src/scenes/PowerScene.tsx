@@ -1,10 +1,9 @@
 import { BriefingRail, SpokenFacts } from '@/components/BriefingRail'
 import { HighPoweredSpec } from '@/components/HighPoweredSpec'
+import { PowerBlueprint } from '@/components/PowerBlueprint'
 import { PhotoPlate } from '@/components/PhotoPlate'
-import { HBarChart } from '@/components/charts/HBarChart'
 import { fact, snapshot } from '@/data/load'
 import { kpisFor } from '@/lib/kpis'
-import { formatSf } from '@/lib/format'
 import { PENINSULA_CAMERA } from '@/lib/mapStyle'
 import { usePresenter } from '@/state/presenter'
 import { useEffect } from 'react'
@@ -35,16 +34,16 @@ export function PowerScene() {
 
   return (
     <BriefingRail
-      kicker="Power · one chapter"
-      emoji="⚡"
-      title={snapshot.power.thesis}
+      kicker="Power · blueprint"
+      title="The high-powered AI tenant."
       thesis={
         takeaway ??
-        'Delivery timing, transformer excess, and cooling are why vacant LS product wins the AI tour. May 2026 working file — older than the February market snapshot.'
+        '30 W/SF minimum, prefer 35–50+. Connectivity, security, mechanical, flexible design. May 2026 working file — older than the Q2 market snapshot.'
       }
       kpis={kpis}
       asOf={snapshot.meta.powerFreshness}
     >
+      <PowerBlueprint />
       <HighPoweredSpec />
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
         {named.map((item) => (
@@ -70,25 +69,12 @@ export function PowerScene() {
           </button>
         ))}
       </div>
-      <HBarChart
-        caption="Named seed assets by SF · MW not restated"
-        rows={named.map((item) => ({
-          id: item.id,
-          label: item.name,
-          value: item.propertySf ?? 0,
-          display: item.propertySf ? formatSf(item.propertySf, true) : 'SF —',
-          active: selectedId === item.id,
-        }))}
-        tone="ink"
-        onSelect={(id) => setSelectedId(selectedId === id ? null : id)}
-      />
       <SpokenFacts
         items={[
-          'Feb 3 spec is the sale against vacant LS shells: 30 W/SF minimum, prefer 35–50+. Avia/Spur comments 8 W/USF lab. 999 Baker is 27 W/SF building, 40 W/SF lab.',
+          'Blueprint, not a photograph: connectivity, power 30 W/SF min prefer 35–50+, security, mechanical, flexible design.',
+          `Feb 3 spec is the sale against vacant LS shells. Avia/Spur comments 8 W/USF lab. 999 Baker is 27 W/SF building, 40 W/SF lab.`,
           `${fact('powerBuildings').value} buildings / ${fact('powerSfM').value} msf in the May 2026 working layer. ${fact('powerTier01').value} of them are tier 0–1.`,
-          'This is why AI and R&D companies sign vacant LS product: usable power and cooling on their delivery date, not a 36-month utility narrative.',
-          'Anonymous nodes stay on the map. Names are not restated from the May file. Do not treat this as a building-level claim.',
-          'MW per asset is not in the February snapshot. We will not invent it.',
+          'Anonymous nodes stay unnamed. MW per asset is not in the snapshot. We will not invent it.',
           snapshot.meta.powerFreshness,
         ]}
       />

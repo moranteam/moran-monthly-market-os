@@ -1,28 +1,26 @@
-import { CompressionScene } from '@/scenes/CompressionScene'
 import { CoverScene } from '@/scenes/CoverScene'
 import { DecisionScene } from '@/scenes/DecisionScene'
+import { ExplodingScene } from '@/scenes/ExplodingScene'
 import { FundingScene } from '@/scenes/FundingScene'
 import { InventoryScene } from '@/scenes/InventoryScene'
 import { LeasingScene } from '@/scenes/LeasingScene'
+import { MarketsScene } from '@/scenes/MarketsScene'
 import { MissionBayScene } from '@/scenes/MissionBayScene'
 import { OfficeScene } from '@/scenes/OfficeScene'
 import { PowerScene } from '@/scenes/PowerScene'
-import { ProductTypesScene } from '@/scenes/ProductTypesScene'
-import { TalentScene } from '@/scenes/TalentScene'
-import { ThesisScene } from '@/scenes/ThesisScene'
+import { RndScene } from '@/scenes/RndScene'
 import type { ReactNode } from 'react'
 
 const sceneIds = [
   'cover',
-  'thesis',
+  'markets',
+  'rnd',
   'leasing',
   'office',
-  'product',
-  'talent',
+  'exploding',
+  'power',
   'funding',
   'mission-bay',
-  'compression',
-  'power',
   'inventory',
   'decision',
 ] as const
@@ -37,26 +35,24 @@ function sceneElement(id: SceneId): ReactNode {
   switch (id) {
     case 'cover':
       return <CoverScene />
-    case 'thesis':
-      return <ThesisScene />
+    case 'markets':
+      return <MarketsScene />
+    case 'rnd':
+      return <RndScene />
     case 'leasing':
       return <LeasingScene />
     case 'office':
       return <OfficeScene />
-    case 'product':
-      return <ProductTypesScene />
-    case 'talent':
-      return <TalentScene />
+    case 'exploding':
+      return <ExplodingScene />
+    case 'power':
+      return <PowerScene />
     case 'funding':
       return <FundingScene />
     case 'mission-bay':
       return <MissionBayScene />
-    case 'compression':
-      return <CompressionScene />
     case 'inventory':
       return <InventoryScene />
-    case 'power':
-      return <PowerScene />
     case 'decision':
       return <DecisionScene />
     default: {

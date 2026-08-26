@@ -131,7 +131,15 @@ export type Property = {
   allElectric?: boolean
 }
 
-export type CompSet = 'ls-new' | 'pen-office' | 'mb-office'
+export type CompSet =
+  | 'ls-new'
+  | 'pen-office'
+  | 'mb-office'
+  | 'sv-office'
+  | 'sf-office'
+  | 'oak-office'
+  | 'oak-rnd'
+  | 'sv-rnd'
 
 export type Comp = {
   id: string
@@ -142,6 +150,8 @@ export type Comp = {
   leaseType: string
   areaLeasedSf: number
   areaLeasedNote?: string
+  address?: string | null
+  city?: string | null
   propertySf: number | null
   rent: number | null
   rentBasis: RentBasis | null
@@ -413,6 +423,11 @@ export type Snapshot = {
   markets: MarketGeo[]
   sfSubmarkets: SfSubmarket[]
   svRndSubmarkets: SvRndSubmarket[]
+  peninsulaOfficeSubmarkets: Q2Submarket[]
+  svOfficeSubmarkets: Q2Submarket[]
+  oaklandOfficeSubmarkets: Q2Submarket[]
+  oaklandRndSubmarkets: Q2Submarket[]
+  svRndPipeline: NamedPipeline[]
 }
 
 export type MarketGeo = {
@@ -429,8 +444,17 @@ export type MarketGeo = {
   officeAskFact: string
   officeAbsFact: string
   rndVacFact: string | null
+  rndAskFact: string | null
+  rndAbsFact: string | null
   lsVacFact: string | null
   line: string
+}
+
+export type NamedPipeline = {
+  id: string
+  name: string
+  sf: number
+  place: string
 }
 
 export type SfSubmarket = {
@@ -453,6 +477,19 @@ export type SvRndSubmarket = {
   ucSf: number
   deliveredSf: number
   note?: string
+}
+
+export type Q2Submarket = {
+  id: string
+  name: string
+  nraSf: number
+  vacancyPct: number
+  asking: number
+  askingBasis: RentBasis
+  q2AbsSf: number | null
+  ucSf?: number
+  note?: string
+  total?: boolean
 }
 
 export type CameraIntent = {

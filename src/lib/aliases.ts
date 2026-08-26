@@ -1,9 +1,12 @@
 const aliases: Record<string, string> = {
-  corridor: 'thesis',
-  'silicon-valley': 'office',
+  corridor: 'markets',
+  thesis: 'inventory',
+  'silicon-valley': 'rnd',
   'peninsula-demand': 'office',
-  exploding: 'talent',
-  'sf-demand': 'compression',
+  talent: 'exploding',
+  product: 'power',
+  compression: 'mission-bay',
+  'sf-demand': 'mission-bay',
   close: 'decision',
 }
 

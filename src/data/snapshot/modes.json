@@ -1,1 +1,37 @@
-{"present":["cover","thesis","leasing","office","product","talent","funding","mission-bay","compression","power","inventory","decision"],"leaveBehind":["cover","thesis","leasing","product","talent","mission-bay","compression","decision"],"share":["cover","thesis","leasing","product","talent","mission-bay","compression","decision"]}
+{
+  "present": [
+    "cover",
+    "markets",
+    "rnd",
+    "leasing",
+    "office",
+    "exploding",
+    "power",
+    "funding",
+    "mission-bay",
+    "inventory",
+    "decision"
+  ],
+  "leaveBehind": [
+    "cover",
+    "markets",
+    "rnd",
+    "leasing",
+    "office",
+    "exploding",
+    "mission-bay",
+    "decision"
+  ],
+  "share": [
+    "cover",
+    "markets",
+    "rnd",
+    "leasing",
+    "office",
+    "exploding",
+    "power",
+    "funding",
+    "mission-bay",
+    "decision"
+  ]
+}

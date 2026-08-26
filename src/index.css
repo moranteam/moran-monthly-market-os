@@ -161,15 +161,11 @@ body {
   background: #f4f1e8;
 }
 
-/* Content ≥50% of the 16:9 frame. Jump rail is outside this grid. */
-.briefing-split {
-  display: grid;
-  grid-template-columns: minmax(34rem, 1.22fr) minmax(16rem, 0.78fr);
-}
-
+/* Content ≥50vw of the 16:9 frame. Jump rail sits outside this grid. */
+.briefing-split,
 .briefing-split-wide {
   display: grid;
-  grid-template-columns: minmax(36rem, 1.3fr) minmax(14rem, 0.7fr);
+  grid-template-columns: minmax(50vw, 1.28fr) minmax(12rem, 0.72fr);
 }
 
 .city-label {

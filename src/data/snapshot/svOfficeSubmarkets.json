@@ -1,0 +1,15 @@
+[
+  { "id": "cbd", "name": "CBD", "nraSf": 9920000, "vacancyPct": 32.9, "asking": 4.22, "askingBasis": "FSG", "q2AbsSf": -75000 },
+  { "id": "cupertino", "name": "Cupertino", "nraSf": 7190000, "vacancyPct": 2.4, "asking": 5.49, "askingBasis": "FSG", "q2AbsSf": -5000 },
+  { "id": "fremont", "name": "Fremont", "nraSf": 2440000, "vacancyPct": 19.0, "asking": 2.86, "askingBasis": "FSG", "q2AbsSf": -9000 },
+  { "id": "mv-la", "name": "Mountain View / Los Altos", "nraSf": 12120000, "vacancyPct": 16.0, "asking": 7.73, "askingBasis": "FSG", "q2AbsSf": 70000 },
+  { "id": "palo-alto", "name": "Palo Alto", "nraSf": 8000000, "vacancyPct": 16.5, "asking": 9.35, "askingBasis": "FSG", "q2AbsSf": -23000, "note": "Same print as Peninsula PA / EPA — shown once per chapter." },
+  { "id": "sj-central", "name": "San Jose Central", "nraSf": 2750000, "vacancyPct": 17.3, "asking": 2.62, "askingBasis": "FSG", "q2AbsSf": null },
+  { "id": "ibp-milpitas", "name": "IBP / Milpitas", "nraSf": 2370000, "vacancyPct": 6.0, "asking": 2.28, "askingBasis": "FSG", "q2AbsSf": 8000 },
+  { "id": "sj-north", "name": "San Jose North", "nraSf": 15150000, "vacancyPct": 17.3, "asking": 4.11, "askingBasis": "FSG", "q2AbsSf": -95000 },
+  { "id": "sj-south", "name": "San Jose South", "nraSf": 2650000, "vacancyPct": 6.5, "asking": 2.81, "askingBasis": "FSG", "q2AbsSf": -25000 },
+  { "id": "santa-clara", "name": "Santa Clara", "nraSf": 15370000, "vacancyPct": 13.4, "asking": 4.88, "askingBasis": "FSG", "q2AbsSf": 82000, "ucSf": 324000 },
+  { "id": "sunnyvale", "name": "Sunnyvale", "nraSf": 22000000, "vacancyPct": 10.6, "asking": 6.08, "askingBasis": "FSG", "q2AbsSf": 68000 },
+  { "id": "west-valley", "name": "West Valley", "nraSf": 6630000, "vacancyPct": 18.3, "asking": 4.35, "askingBasis": "FSG", "q2AbsSf": 18000 },
+  { "id": "total", "name": "Greater SV office total", "nraSf": 106580000, "vacancyPct": 15.2, "asking": 5.27, "askingBasis": "FSG", "q2AbsSf": 14880, "total": true }
+]

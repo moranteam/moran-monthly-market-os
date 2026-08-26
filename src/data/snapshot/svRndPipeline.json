@@ -1,0 +1,5 @@
+[
+  { "id": "intuitive", "name": "Intuitive", "sf": 364000, "place": "Sunnyvale" },
+  { "id": "supermicro", "name": "Supermicro", "sf": 333000, "place": "Brokaw" },
+  { "id": "arista", "name": "Arista", "sf": 243000, "place": "Santa Clara" }
+]

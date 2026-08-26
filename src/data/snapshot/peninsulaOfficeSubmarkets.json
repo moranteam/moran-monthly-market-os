@@ -1,0 +1,13 @@
+[
+  { "id": "belmont-sc", "name": "Belmont / San Carlos", "nraSf": 1230000, "vacancyPct": 25.7, "asking": 5.42, "askingBasis": "FSG", "q2AbsSf": -4000 },
+  { "id": "burlingame", "name": "Burlingame", "nraSf": 3590000, "vacancyPct": 22.0, "asking": 4.16, "askingBasis": "FSG", "q2AbsSf": -25000 },
+  { "id": "daly-brisbane", "name": "Daly City / Brisbane", "nraSf": 1130000, "vacancyPct": 17.2, "asking": 3.97, "askingBasis": "FSG", "q2AbsSf": -63000 },
+  { "id": "foster-city", "name": "Foster City", "nraSf": 2530000, "vacancyPct": 23.6, "asking": 4.96, "askingBasis": "FSG", "q2AbsSf": -2000 },
+  { "id": "menlo-park", "name": "Menlo Park", "nraSf": 5600000, "vacancyPct": 20.6, "asking": 9.76, "askingBasis": "FSG", "q2AbsSf": -47000 },
+  { "id": "palo-alto", "name": "Palo Alto / East Palo Alto", "nraSf": 8000000, "vacancyPct": 16.5, "asking": 9.35, "askingBasis": "FSG", "q2AbsSf": -23000 },
+  { "id": "rwc-shores", "name": "Redwood City / Shores", "nraSf": 7660000, "vacancyPct": 42.2, "asking": 7.0, "askingBasis": "FSG", "q2AbsSf": 37000 },
+  { "id": "san-bruno", "name": "San Bruno / Millbrae", "nraSf": 1250000, "vacancyPct": 5.9, "asking": 4.28, "askingBasis": "FSG", "q2AbsSf": -4000 },
+  { "id": "san-mateo", "name": "San Mateo", "nraSf": 8310000, "vacancyPct": 22.8, "asking": 5.43, "askingBasis": "FSG", "q2AbsSf": -30000, "ucSf": 39000 },
+  { "id": "ssf", "name": "South San Francisco", "nraSf": 2340000, "vacancyPct": 33.7, "asking": 8.15, "askingBasis": "FSG", "q2AbsSf": 24000 },
+  { "id": "total", "name": "Peninsula total", "nraSf": 41640000, "vacancyPct": 24.9, "asking": 7.21, "askingBasis": "FSG", "q2AbsSf": -138189, "total": true }
+]

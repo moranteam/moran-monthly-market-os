@@ -1,0 +1,13 @@
+[
+  { "id": "alameda", "name": "Alameda", "nraSf": 3350000, "vacancyPct": 9.2, "asking": 3.44, "askingBasis": "FSG", "q2AbsSf": -6000 },
+  { "id": "berkeley", "name": "Berkeley", "nraSf": 2570000, "vacancyPct": 18.7, "asking": 3.18, "askingBasis": "FSG", "q2AbsSf": -31000 },
+  { "id": "east-lake", "name": "East Lake", "nraSf": 317000, "vacancyPct": 7.6, "asking": 2.0, "askingBasis": "FSG", "q2AbsSf": null },
+  { "id": "emeryville", "name": "Emeryville", "nraSf": 4080000, "vacancyPct": 27.7, "asking": 4.4, "askingBasis": "FSG", "q2AbsSf": -11000 },
+  { "id": "jls", "name": "Jack London Square", "nraSf": 907000, "vacancyPct": 21.3, "asking": 3.01, "askingBasis": "FSG", "q2AbsSf": -29000 },
+  { "id": "oakland", "name": "Oakland", "nraSf": 1460000, "vacancyPct": 13.4, "asking": 2.4, "askingBasis": "FSG", "q2AbsSf": -2000 },
+  { "id": "airport", "name": "Airport", "nraSf": 1710000, "vacancyPct": 13.9, "asking": 2.07, "askingBasis": "FSG", "q2AbsSf": -4000 },
+  { "id": "cbd", "name": "CBD", "nraSf": 11500000, "vacancyPct": 37.9, "asking": 3.8, "askingBasis": "FSG", "q2AbsSf": 25000 },
+  { "id": "richmond", "name": "Richmond", "nraSf": 640000, "vacancyPct": 18.0, "asking": 2.41, "askingBasis": "FSG", "q2AbsSf": 2000 },
+  { "id": "san-leandro", "name": "San Leandro", "nraSf": 936000, "vacancyPct": 1.3, "asking": 3.01, "askingBasis": "FSG", "q2AbsSf": 1000 },
+  { "id": "total", "name": "Oakland office total", "nraSf": 27470000, "vacancyPct": 25.7, "asking": 3.69, "askingBasis": "FSG", "q2AbsSf": -55141, "total": true }
+]

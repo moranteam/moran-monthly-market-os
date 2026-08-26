@@ -1,0 +1,11 @@
+[
+  { "id": "alameda", "name": "Alameda", "nraSf": 1350000, "vacancyPct": 27.1, "asking": 3.73, "askingBasis": "NNN", "q2AbsSf": -6000 },
+  { "id": "berkeley", "name": "Berkeley", "nraSf": 2930000, "vacancyPct": 32.0, "asking": 6.23, "askingBasis": "NNN", "q2AbsSf": 13000 },
+  { "id": "emeryville", "name": "Emeryville", "nraSf": 1560000, "vacancyPct": 44.8, "asking": 4.73, "askingBasis": "NNN", "q2AbsSf": -34000 },
+  { "id": "hayward", "name": "Hayward", "nraSf": 5820000, "vacancyPct": 12.5, "asking": 3.25, "askingBasis": "NNN", "q2AbsSf": 2000 },
+  { "id": "oakland", "name": "Oakland", "nraSf": 1850000, "vacancyPct": 24.4, "asking": 1.76, "askingBasis": "NNN", "q2AbsSf": 17000 },
+  { "id": "richmond", "name": "Richmond", "nraSf": 2850000, "vacancyPct": 10.6, "asking": 1.83, "askingBasis": "NNN", "q2AbsSf": 7000 },
+  { "id": "san-leandro", "name": "San Leandro", "nraSf": 2850000, "vacancyPct": 7.2, "asking": 1.8, "askingBasis": "NNN", "q2AbsSf": -12000 },
+  { "id": "union-city", "name": "Union City", "nraSf": 1400000, "vacancyPct": 8.9, "asking": 1.99, "askingBasis": "NNN", "q2AbsSf": 76000 },
+  { "id": "total", "name": "Oakland R&D total", "nraSf": 20600000, "vacancyPct": 18.5, "asking": 3.79, "askingBasis": "NNN", "q2AbsSf": 63174, "total": true }
+]

@@ -50,12 +50,17 @@ export function LeaseCompStrip({ caption, comps }: LeaseCompStripProps) {
                   className="h-20 w-full"
                 />
               ) : (
-                <PhotoPlate name={item.tenant} className="h-20 w-full" />
+                <PhotoPlate
+                  name={item.tenant}
+                  address={item.address}
+                  city={item.city}
+                  className="h-20 w-full"
+                />
               )}
               <div className="flex flex-col gap-0.5 px-2 py-2 text-[12px] leading-tight text-ink">
-                <span className="font-medium">{asset?.address ?? 'Address not restated'}</span>
+                <span className="font-medium">{asset?.address ?? item.address ?? 'Address not restated'}</span>
                 <span className="text-ink/55">{item.leaseType}</span>
-                <span className="tabular">{formatSf(item.areaLeasedSf, true)}</span>
+                <span className="tabular">{item.areaLeasedNote ?? formatSf(item.areaLeasedSf, true)}</span>
                 <span className="tabular">{rent ?? 'Rent not restated'}</span>
                 {item.term ? <span>{item.term}</span> : null}
                 {item.owner ? <span className="text-ink/55">{item.owner}</span> : null}

@@ -37,7 +37,7 @@ Audience lens: `1` Occupier · `2` Owner · `3` Lender. `←` `→` Space · `F`
 
 ## Sources in this restage
 
-- CBRE Research Q2 2026 — SF / Peninsula / Greater SV / Oakland office and Silicon Valley R&D
+- CBRE Research Q2 2026 — official submarket statistics tables and Figure comps (SF / Peninsula / Greater SV / Oakland office, Silicon Valley R&D, Oakland R&D). Headline KPIs are the pack headers; submarket rows are the statistics tables. SV R&D UC headline is 940,214 (Intuitive + Supermicro + Arista), not the 1.26 msf overview line.
 - CBRE Research Q4 2025 / Q1 2026 — Bay Area life science cluster (not restated as a Q2 science quarterly)
 - PitchBook / Crunchbase Bay Area VC Q4 2025 and FY 2025
 - February 3 deck — SF AI leasing and high-powered AI tenant spec

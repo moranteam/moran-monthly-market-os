@@ -37,13 +37,15 @@ export function ClusterTable({ product }: ClusterTableProps) {
           {snapshot.markets.map((market) => {
             const vacId =
               product === 'rnd'
-                ? market.rndVacFact ?? market.officeVacFact
+                ? market.rndVacFact
                 : product === 'ls'
-                  ? market.lsVacFact ?? market.officeVacFact
+                  ? market.lsVacFact
                   : market.officeVacFact
+            const askId = product === 'rnd' ? market.rndAskFact : market.officeAskFact
+            const absId = product === 'rnd' ? market.rndAbsFact : market.officeAbsFact
             const vac = factsSafe(vacId)
-            const ask = factsSafe(market.officeAskFact)
-            const abs = factsSafe(market.officeAbsFact)
+            const ask = factsSafe(askId)
+            const abs = factsSafe(absId)
             const on = selectedId === market.id
             return (
               <tr
@@ -59,13 +61,9 @@ export function ClusterTable({ product }: ClusterTableProps) {
                   </span>
                 </td>
                 <td className="px-3 py-2 tabular">{vac ? formatFact(vac) : '—'}</td>
-                <td className="px-3 py-2 tabular">{product === 'rnd' ? '—' : ask ? formatFact(ask) : '—'}</td>
+                <td className="px-3 py-2 tabular">{ask ? formatFact(ask) : '—'}</td>
                 <td className="px-3 py-2 tabular">
-                  {product === 'rnd' && market.rndVacFact === 'svVacancyPct'
-                    ? signedSf(Number(factsSafe('svQ2AbsSf')?.value ?? 0))
-                    : abs && typeof abs.value === 'number'
-                      ? signedSf(abs.value)
-                      : '—'}
+                  {abs && typeof abs.value === 'number' ? signedSf(abs.value) : '—'}
                 </td>
               </tr>
             )

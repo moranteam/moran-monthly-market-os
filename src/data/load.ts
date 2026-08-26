@@ -12,6 +12,9 @@ import markets from './snapshot/markets.json'
 import meta from './snapshot/meta.json'
 import missionBay from './snapshot/missionBay.json'
 import modes from './snapshot/modes.json'
+import oaklandOfficeSubmarkets from './snapshot/oaklandOfficeSubmarkets.json'
+import oaklandRndSubmarkets from './snapshot/oaklandRndSubmarkets.json'
+import peninsulaOfficeSubmarkets from './snapshot/peninsulaOfficeSubmarkets.json'
 import power from './snapshot/power.json'
 import previous from './snapshot/previous.json'
 import productSpec from './snapshot/productSpec.json'
@@ -19,6 +22,8 @@ import properties from './snapshot/properties.json'
 import scenes from './snapshot/scenes.json'
 import sfSubmarkets from './snapshot/sfSubmarkets.json'
 import submarkets from './snapshot/submarkets.json'
+import svOfficeSubmarkets from './snapshot/svOfficeSubmarkets.json'
+import svRndPipeline from './snapshot/svRndPipeline.json'
 import svRndSubmarkets from './snapshot/svRndSubmarkets.json'
 import talent from './snapshot/talent.json'
 import thesis from './snapshot/thesis.json'
@@ -51,6 +56,11 @@ export const snapshot = {
   markets,
   sfSubmarkets,
   svRndSubmarkets,
+  svRndPipeline,
+  peninsulaOfficeSubmarkets,
+  svOfficeSubmarkets,
+  oaklandOfficeSubmarkets,
+  oaklandRndSubmarkets,
 } as Snapshot
 
 export function isShareMode(mode: string) {
@@ -94,13 +104,68 @@ export function mayChatter() {
   return snapshot.chatter.filter((item) => item.date === '2026-05')
 }
 
-export function q2OfficeComps(share = false) {
-  const ids = ['sunday-robotics', 'solace-walnut', 'replit-parkside', 'cooley-broadway', 'orrick-elco', 'applovin-park']
-  return snapshot.comps.filter((entry) => {
-    if (!ids.includes(entry.id)) return false
-    if (share && entry.presentationOnly) return false
-    return true
+export function compsByIds(ids: string[], share = false) {
+  return ids.flatMap((id) => {
+    const entry = snapshot.comps.find((item) => item.id === id)
+    if (!entry) return []
+    if (share && entry.presentationOnly) return []
+    return [entry]
   })
+}
+
+export function q2OfficeComps(share = false) {
+  return compsByIds(
+    ['sunday-robotics', 'solace-walnut', 'replit-parkside', 'cooley-broadway', 'orrick-elco', 'applovin-park'],
+    share,
+  )
+}
+
+export function peninsulaFigureComps(share = false) {
+  return compsByIds(
+    [
+      'palantir-hamilton-pen',
+      'replit-hillsdale',
+      'sunday-walnut-figure',
+      'freshfields-main',
+      'matic-marsh',
+    ],
+    share,
+  )
+}
+
+export function svOfficeFigureComps(share = false) {
+  return compsByIds(
+    ['panw-scott', 'confidential-augustine', 'mediatek-great-america', 'illumio-scott', 'palantir-hamilton-sv'],
+    share,
+  )
+}
+
+export function sfFigureComps(share = false) {
+  return compsByIds(
+    [
+      'city-sf-1455',
+      'anthropic-500-howard',
+      'anthropic-405-howard',
+      'pwc-405-howard',
+      'ripple-battery',
+      'planet-harrison',
+      'langchain-303',
+      'assort-one-market',
+    ],
+    share,
+  )
+}
+
+export function oaklandOfficeFigureComps(share = false) {
+  return compsBySet('oak-office', share)
+}
+
+export function oaklandRndFigureComps(share = false) {
+  return compsBySet('oak-rnd', share)
+}
+
+export function svRndFigureComps(share = false) {
+  return compsBySet('sv-rnd', share)
 }
 
 export function vacantTourProperties() {

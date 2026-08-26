@@ -13,8 +13,8 @@ export function MapCallout({ pin, active = false, onClick, cameraLng, cameraLat 
   const north = cameraLat != null ? pin.lat > cameraLat : (pin.index ?? 1) % 2 === 1
   const fan = ((Math.max(pin.index ?? 1, 1) - 1) % 4) * 8
   const slot = {
-    dx: (east ? -58 : 58) + (east ? -fan : fan),
-    dy: (north ? 34 : -34) + (north ? fan : -fan),
+    dx: pin.calloutDx ?? (east ? -72 : 72) + (east ? -fan : fan),
+    dy: pin.calloutDy ?? (north ? 42 : -42) + (north ? fan : -fan),
   }
   const fact = pin.fact || pin.sublabel
   const color = active ? '#d36f35' : '#f4f1e8'

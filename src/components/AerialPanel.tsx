@@ -11,8 +11,8 @@ type AerialPanelProps = {
 
 export function AerialPanel({ kicker, title, dek, asOf, children }: AerialPanelProps) {
   return (
-    <div className="pointer-events-none relative flex h-full min-h-0 w-full justify-end">
-      <div className="aerial-scrim pointer-events-auto flex h-full w-[min(46%,32rem)] min-w-[18rem] flex-col overflow-y-auto px-6 pt-7 pb-12 md:px-8">
+    <div className="pointer-events-none relative flex h-full min-h-0 w-full justify-start">
+      <div className="aerial-scrim pointer-events-auto flex h-full min-w-[50vw] w-[56%] flex-col overflow-y-auto px-6 pt-7 pb-12 md:px-8">
         <BrandLockup size="md" />
         <div className="mt-5 min-h-0 flex-1">
           <p className="text-[11px] font-medium tracking-[0.22em] text-gold uppercase">{kicker}</p>

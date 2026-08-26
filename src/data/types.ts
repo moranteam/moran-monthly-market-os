@@ -44,6 +44,9 @@ export type MapLayer =
   | 'product'
   | 'talent'
   | 'compression'
+  | 'markets'
+  | 'rnd'
+  | 'exploding'
 
 export type ModeId = 'present' | 'twin' | 'share'
 
@@ -156,6 +159,7 @@ export type Comp = {
   presentationOnly?: boolean
   notes: string | null
   source: string
+  cbreDeal?: boolean
 }
 
 export type NamedRound = {
@@ -406,6 +410,49 @@ export type Snapshot = {
     share: string[]
     leaveBehind?: string[]
   }
+  markets: MarketGeo[]
+  sfSubmarkets: SfSubmarket[]
+  svRndSubmarkets: SvRndSubmarket[]
+}
+
+export type MarketGeo = {
+  id: string
+  name: string
+  short: string
+  role: 'core' | 'growth'
+  color: string
+  lng: number
+  lat: number
+  calloutDx: number
+  calloutDy: number
+  officeVacFact: string
+  officeAskFact: string
+  officeAbsFact: string
+  rndVacFact: string | null
+  lsVacFact: string | null
+  line: string
+}
+
+export type SfSubmarket = {
+  id: string
+  name: string
+  vacancyPct: number
+  askingAnnual: number
+  absSf: number
+  note?: string
+}
+
+export type SvRndSubmarket = {
+  id: string
+  name: string
+  nraSf: number
+  vacancyPct: number
+  askingNnn: number
+  q2AbsSf: number
+  ytdAbsSf: number
+  ucSf: number
+  deliveredSf: number
+  note?: string
 }
 
 export type CameraIntent = {
@@ -416,7 +463,7 @@ export type CameraIntent = {
   pitch: number
 }
 
-export type PinKind = 'corridor' | 'submarket' | 'comp' | 'property' | 'round' | 'chatter' | 'power'
+export type PinKind = 'corridor' | 'submarket' | 'comp' | 'property' | 'round' | 'chatter' | 'power' | 'market'
 
 export type MapPin = {
   id: string
@@ -428,4 +475,6 @@ export type MapPin = {
   label: string
   sublabel?: string
   fact?: string
+  calloutDx?: number
+  calloutDy?: number
 }

@@ -22,6 +22,7 @@ function BriefingShellInner() {
   const { sceneId, mapLayer, setSelectedId, revealChrome, mode } = usePresenter()
   const { cinematic } = useBriefingLayout()
   const pins = pinsForLayer(mapLayer, isShareMode(mode))
+  const wideRail = ['cover', 'markets', 'office', 'leasing', 'rnd', 'mission-bay'].includes(sceneId)
 
   return (
     <div
@@ -31,7 +32,7 @@ function BriefingShellInner() {
       <SectionNav />
       <div
         className={`relative flex h-full min-w-0 flex-1 ${
-          cinematic ? '' : 'grid grid-cols-[minmax(16.5rem,0.76fr)_minmax(22rem,1.28fr)]'
+          cinematic ? '' : wideRail ? 'briefing-split-wide' : 'briefing-split'
         }`}
       >
         <div

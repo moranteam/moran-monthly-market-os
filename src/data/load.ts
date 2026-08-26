@@ -8,6 +8,7 @@ import facts from './snapshot/facts.json'
 import funding from './snapshot/funding.json'
 import lenses from './snapshot/lenses.json'
 import lifeScienceMarkets from './snapshot/lifeScienceMarkets.json'
+import markets from './snapshot/markets.json'
 import meta from './snapshot/meta.json'
 import missionBay from './snapshot/missionBay.json'
 import modes from './snapshot/modes.json'
@@ -16,7 +17,9 @@ import previous from './snapshot/previous.json'
 import productSpec from './snapshot/productSpec.json'
 import properties from './snapshot/properties.json'
 import scenes from './snapshot/scenes.json'
+import sfSubmarkets from './snapshot/sfSubmarkets.json'
 import submarkets from './snapshot/submarkets.json'
+import svRndSubmarkets from './snapshot/svRndSubmarkets.json'
 import talent from './snapshot/talent.json'
 import thesis from './snapshot/thesis.json'
 import vacantShells from './snapshot/vacantShells.json'
@@ -45,6 +48,9 @@ export const snapshot = {
   previous,
   lenses,
   modes,
+  markets,
+  sfSubmarkets,
+  svRndSubmarkets,
 } as Snapshot
 
 export function isShareMode(mode: string) {
@@ -82,6 +88,19 @@ export function vacantOverbuildShells() {
 
 export function leasingContrastShells() {
   return snapshot.vacantShells.filter((item) => item.role === 'contrast')
+}
+
+export function mayChatter() {
+  return snapshot.chatter.filter((item) => item.date === '2026-05')
+}
+
+export function q2OfficeComps(share = false) {
+  const ids = ['sunday-robotics', 'solace-walnut', 'replit-parkside', 'cooley-broadway', 'orrick-elco', 'applovin-park']
+  return snapshot.comps.filter((entry) => {
+    if (!ids.includes(entry.id)) return false
+    if (share && entry.presentationOnly) return false
+    return true
+  })
 }
 
 export function vacantTourProperties() {

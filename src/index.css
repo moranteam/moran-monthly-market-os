@@ -161,6 +161,17 @@ body {
   background: #f4f1e8;
 }
 
+/* Content ≥50% of the 16:9 frame. Jump rail is outside this grid. */
+.briefing-split {
+  display: grid;
+  grid-template-columns: minmax(34rem, 1.22fr) minmax(16rem, 0.78fr);
+}
+
+.briefing-split-wide {
+  display: grid;
+  grid-template-columns: minmax(36rem, 1.3fr) minmax(14rem, 0.7fr);
+}
+
 .city-label {
   display: inline-block;
   padding: 3px 8px;
@@ -186,16 +197,18 @@ body {
 }
 
 .aerial-scrim {
+  min-width: 50vw;
+  width: 56%;
   background:
     linear-gradient(
       90deg,
-      transparent 0%,
-      rgba(7, 18, 15, 0.05) 10%,
-      rgba(7, 18, 15, 0.52) 28%,
-      rgba(7, 18, 15, 0.86) 54%,
-      rgba(7, 18, 15, 0.94) 100%
+      rgba(7, 18, 15, 0.96) 0%,
+      rgba(7, 18, 15, 0.92) 42%,
+      rgba(7, 18, 15, 0.72) 62%,
+      rgba(7, 18, 15, 0.28) 82%,
+      transparent 100%
     ),
-    linear-gradient(180deg, rgba(7, 18, 15, 0.18) 0%, transparent 18%, transparent 78%, rgba(7, 18, 15, 0.42) 100%);
+    linear-gradient(180deg, rgba(7, 18, 15, 0.28) 0%, transparent 16%, transparent 78%, rgba(7, 18, 15, 0.48) 100%);
 }
 
 .maplibregl-popup-content {

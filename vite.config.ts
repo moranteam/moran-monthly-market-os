@@ -1,4 +1,6 @@
 import { execSync } from 'node:child_process'
+import { readFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
 import { fileURLToPath, URL } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
@@ -10,8 +12,18 @@ function buildSha() {
       .toString()
       .trim()
   } catch {
-    return 'dev'
+    // Tarball / file deploys have no .git. Prefer the stamped origin sha.
   }
+  try {
+    const stamp = JSON.parse(
+      readFileSync(join(dirname(fileURLToPath(import.meta.url)), 'public/build.json'), 'utf8'),
+    ) as { short?: string }
+    if (stamp.short) return stamp.short
+  } catch {
+    // ignore
+  }
+  const vercelSha = process.env.VERCEL_GIT_COMMIT_SHA
+  return vercelSha ? vercelSha.slice(0, 7) : 'dev'
 }
 
 export default defineConfig({

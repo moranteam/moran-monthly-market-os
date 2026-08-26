@@ -48,9 +48,9 @@ export const darkSatelliteStyle: StyleSpecification = {
 
 /** Map-right briefing: peninsula + SF + East Bay cities fill the pane, not Pacific water. */
 export const BAY_CAMERA = {
-  longitude: -122.18,
-  latitude: 37.55,
-  zoom: 9.2,
+  longitude: -122.14,
+  latitude: 37.54,
+  zoom: 9.05,
   bearing: -3,
   pitch: 28,
 }

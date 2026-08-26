@@ -4,21 +4,18 @@ type MapCalloutProps = {
   pin: MapPin
   active?: boolean
   onClick?: () => void
+  cameraLng?: number
+  cameraLat?: number
 }
 
-const slots = [
-  { dx: 58, dy: -34 },
-  { dx: -58, dy: 30 },
-  { dx: 62, dy: 38 },
-  { dx: -64, dy: -40 },
-  { dx: 70, dy: 8 },
-  { dx: -70, dy: 8 },
-  { dx: 54, dy: -58 },
-  { dx: -54, dy: 56 },
-]
-
-export function MapCallout({ pin, active = false, onClick }: MapCalloutProps) {
-  const slot = slots[(Math.max(pin.index ?? 1, 1) - 1) % slots.length]
+export function MapCallout({ pin, active = false, onClick, cameraLng, cameraLat }: MapCalloutProps) {
+  const east = cameraLng != null ? pin.lng > cameraLng : (pin.index ?? 1) % 2 === 0
+  const north = cameraLat != null ? pin.lat > cameraLat : (pin.index ?? 1) % 2 === 1
+  const fan = ((Math.max(pin.index ?? 1, 1) - 1) % 4) * 8
+  const slot = {
+    dx: (east ? -58 : 58) + (east ? -fan : fan),
+    dy: (north ? 34 : -34) + (north ? fan : -fan),
+  }
   const fact = pin.fact || pin.sublabel
   const color = active ? '#d36f35' : '#f4f1e8'
   const svgLeft = Math.min(0, slot.dx)

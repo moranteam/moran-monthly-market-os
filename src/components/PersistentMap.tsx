@@ -73,6 +73,8 @@ export function PersistentMap({ pins, onPinClick }: PersistentMapProps) {
               pin={pin}
               active={selectedId === pin.id}
               onClick={() => onPinClick?.(pin.id)}
+              cameraLng={camera.longitude}
+              cameraLat={camera.latitude}
             />
           </Marker>
         ))}

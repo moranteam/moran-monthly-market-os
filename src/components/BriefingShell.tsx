@@ -31,7 +31,7 @@ function BriefingShellInner() {
     >
       <SectionNav />
       <div
-        className={`relative flex h-full min-w-0 flex-1 ${
+        className={`relative h-full min-w-0 flex-1 ${
           cinematic ? '' : wideRail ? 'briefing-split-wide' : 'briefing-split'
         }`}
       >

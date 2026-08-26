@@ -35,11 +35,20 @@ export function LeaseCompStrip({ caption, comps }: LeaseCompStripProps) {
               type="button"
               onClick={() => setSelectedId(on ? null : item.id)}
               className={`flex w-[11.5rem] shrink-0 flex-col border text-left ${
-                item.cbreDeal ? 'bg-[#e7f3ec]' : 'bg-white/70'
-              } ${on ? 'border-copper' : 'border-ink/12'}`}
+                item.cbreDeal
+                  ? 'border-[#1b6b4a]/45 bg-[#cfe8d8]'
+                  : on
+                    ? 'border-copper bg-white/70'
+                    : 'border-ink/12 bg-white/70'
+              } ${on && item.cbreDeal ? 'ring-1 ring-copper' : ''}`}
             >
-              <div className="flex items-center gap-2 border-b border-ink/8 px-2 py-1.5">
+              <div className="flex items-center justify-between gap-2 border-b border-ink/8 px-2 py-1.5">
                 <NameWithMark name={item.tenant} size="sm" className="text-[12px] font-medium" />
+                {item.cbreDeal ? (
+                  <span className="shrink-0 text-[9px] font-semibold tracking-[0.12em] text-[#1b6b4a] uppercase">
+                    CBRE
+                  </span>
+                ) : null}
               </div>
               {asset ? (
                 <PhotoPlate

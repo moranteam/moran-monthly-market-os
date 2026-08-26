@@ -1,8 +1,9 @@
 import { AerialPanel } from '@/components/AerialPanel'
 import { PhotoPlate } from '@/components/PhotoPlate'
 import { StackBar } from '@/components/charts/StackBar'
+import { VColumnChart } from '@/components/charts/VColumnChart'
 import { fact, missionBayPinProperties, snapshot } from '@/data/load'
-import { formatFact, formatPropertyAsking, formatSf } from '@/lib/format'
+import { formatFact, formatPropertyAsking, formatSf, monthlyFromFact } from '@/lib/format'
 import { AERIAL_CAMERA } from '@/lib/mapStyle'
 import { usePresenter } from '@/state/presenter'
 import { useEffect } from 'react'
@@ -28,6 +29,26 @@ export function CompressionScene() {
       asOf={snapshot.meta.asOfLabel}
     >
       <div className="rounded-sm bg-paper px-3 py-3 text-ink">
+        <VColumnChart
+          caption="Asking · monthly FSG"
+          columns={[
+            {
+              id: 'mb',
+              label: 'Mission Bay',
+              value: monthlyFromFact(fact('mbChinaBasinAsking')),
+              display: formatFact(fact('mbChinaBasinAsking')),
+              tone: 'asking',
+            },
+            {
+              id: 'city',
+              label: 'SF city',
+              value: monthlyFromFact(fact('sfOfficeAsking')),
+              display: formatFact(fact('sfOfficeAsking')),
+              tone: 'ink',
+            },
+          ]}
+        />
+        <div className="mt-3">
         <StackBar
           caption="8.1 msf SF office demand · industry mix"
           totalLabel={`${formatFact(fact('sfOfficeDemandMsf'))} · AI ${formatFact(fact('sfOfficeAiPct'))}`}
@@ -48,6 +69,7 @@ export function CompressionScene() {
             },
           ]}
         />
+        </div>
       </div>
       <p className="text-[14px] leading-snug text-paper/90">
         Highest SF asking {formatFact(fact('mbChinaBasinAsking'))} vs city {formatFact(fact('sfOfficeAsking'))}.

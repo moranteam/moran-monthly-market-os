@@ -1,5 +1,6 @@
 import { BriefingRail, SpokenFacts } from '@/components/BriefingRail'
 import { HighPoweredSpec } from '@/components/HighPoweredSpec'
+import { PhotoPlate } from '@/components/PhotoPlate'
 import { HBarChart } from '@/components/charts/HBarChart'
 import { fact, snapshot } from '@/data/load'
 import { kpisFor } from '@/lib/kpis'
@@ -17,7 +18,7 @@ export function PowerScene() {
     .sort((a, b) => (b.propertySf ?? 0) - (a.propertySf ?? 0))
 
   useEffect(() => {
-    setCamera({ ...PENINSULA_CAMERA, zoom: 9.8, pitch: 44 })
+    setCamera({ ...PENINSULA_CAMERA, zoom: 9.9, pitch: 32 })
   }, [setCamera])
 
   useEffect(() => {
@@ -27,7 +28,7 @@ export function PowerScene() {
       longitude: property.lng,
       latitude: property.lat,
       zoom: 13,
-      pitch: 48,
+      pitch: 36,
       bearing: -8,
     })
   }, [selectedId, setCamera])
@@ -45,6 +46,30 @@ export function PowerScene() {
       asOf={snapshot.meta.powerFreshness}
     >
       <HighPoweredSpec />
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+        {named.map((item) => (
+          <button
+            key={item.id}
+            type="button"
+            onClick={() => setSelectedId(selectedId === item.id ? null : item.id)}
+            className={`flex gap-2 border p-1.5 text-left ${
+              selectedId === item.id ? 'border-copper bg-white' : 'border-ink/10 bg-white/55'
+            }`}
+          >
+            <PhotoPlate
+              name={item.name}
+              address={item.address}
+              city={item.city}
+              photoUrl={item.photoUrl}
+              className="h-14 w-14"
+            />
+            <span className="min-w-0">
+              <span className="block truncate text-[12px] font-medium text-ink">{item.name}</span>
+              <span className="block truncate text-[11px] text-ink/55">{item.city}</span>
+            </span>
+          </button>
+        ))}
+      </div>
       <HBarChart
         caption="Named seed assets by SF · MW not restated"
         rows={named.map((item) => ({

@@ -1,7 +1,8 @@
 import { BriefingRail, SpokenFacts } from '@/components/BriefingRail'
 import { HighPoweredSpec } from '@/components/HighPoweredSpec'
+import { PhotoPlate } from '@/components/PhotoPlate'
 import { VennProduct } from '@/components/charts/VennProduct'
-import { fact, snapshot } from '@/data/load'
+import { fact, propertyById, snapshot } from '@/data/load'
 import { kpisFor } from '@/lib/kpis'
 import { PENINSULA_CAMERA } from '@/lib/mapStyle'
 import { usePresenter } from '@/state/presenter'
@@ -11,9 +12,10 @@ export function ProductTypesScene() {
   const { setCamera, takeaway, lens } = usePresenter()
   const spec = snapshot.productSpec
   const kpis = kpisFor('product', lens).map((item) => ({ fact: fact(item.factId), icon: item.icon }))
+  const proof = propertyById('san-carlos-research')
 
   useEffect(() => {
-    setCamera({ ...PENINSULA_CAMERA, zoom: 10.4, pitch: 46 })
+    setCamera({ ...PENINSULA_CAMERA, zoom: 10.35, pitch: 32 })
   }, [setCamera])
 
   return (
@@ -25,6 +27,22 @@ export function ProductTypesScene() {
       kpis={kpis}
       asOf={spec.asOf}
     >
+      {proof ? (
+        <div className="flex gap-3 border border-ink/10 bg-white/55 p-2">
+          <PhotoPlate
+            name={proof.name}
+            address={proof.address}
+            city={proof.city}
+            photoUrl={proof.photoUrl}
+            className="h-16 w-16"
+          />
+          <div>
+            <p className="text-[12px] font-medium tracking-[0.12em] text-copper uppercase">Closed proof</p>
+            <p className="font-display text-[22px] leading-tight text-ink">{proof.address}</p>
+            <p className="text-[14px] text-ink/65">230,961 SF · leased robotics · former Novartis</p>
+          </div>
+        </div>
+      ) : null}
       <VennProduct shared={spec.shared} lsOnly={spec.lsOnly} />
       <HighPoweredSpec />
       <div className="grid gap-3 md:grid-cols-2">

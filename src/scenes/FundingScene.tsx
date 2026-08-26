@@ -15,7 +15,7 @@ export function FundingScene() {
   const { setCamera, takeaway, lens } = usePresenter()
   const kpis = kpisFor('funding', lens).map((item) => ({ fact: fact(item.factId), icon: item.icon }))
   useEffect(() => {
-    setCamera({ ...BAY_CAMERA, zoom: 8.7, pitch: 40 })
+    setCamera({ ...BAY_CAMERA })
   }, [setCamera])
 
   return (

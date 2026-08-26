@@ -83,6 +83,7 @@ export function Chrome() {
               {fullscreen ? 'Exit' : 'Fullscreen'} · F
             </button>
             <span className="hidden md:inline">← → Space</span>
+            <span className="hidden font-mono text-[11px] text-paper/45 lg:inline">{__BUILD_SHA__}</span>
           </div>
         </div>
       ) : null}

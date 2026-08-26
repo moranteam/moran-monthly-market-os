@@ -41,7 +41,7 @@ export function GroupedBars({ caption, series, categories }: GroupedBarsProps) {
       >
         {categories.map((category) => (
           <div key={category.id} className="min-w-0">
-            <div className="flex h-24 items-end justify-center gap-1 bg-ink/6 px-2">
+            <div className="flex h-16 items-end justify-center gap-1 bg-ink/6 px-2">
               {series.map((item, index) => {
                 const cell = category.values[item.key]
                 const value = cell?.value ?? 0

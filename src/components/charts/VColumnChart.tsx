@@ -37,7 +37,7 @@ export function VColumnChart({ columns, caption, max }: VColumnChartProps) {
           return (
             <div key={column.id} className="flex min-w-0 flex-col items-center">
               <p className="mb-1 text-center tabular text-[13px] leading-none text-ink">{column.display}</p>
-              <div className="flex h-24 w-full items-end justify-center bg-ink/6 px-1.5">
+              <div className="flex h-16 w-full items-end justify-center bg-ink/6 px-1.5">
                 <motion.div
                   className="w-full max-w-10 rounded-t-sm"
                   style={{ background: chartHex(tone) }}

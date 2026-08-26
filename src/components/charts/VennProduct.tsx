@@ -9,7 +9,7 @@ export function VennProduct({ shared, lsOnly }: VennProductProps) {
       <figcaption className="mb-2 text-[13px] font-medium text-ink/55">
         Traditional office ∩ life science ∩ AI
       </figcaption>
-      <svg viewBox="0 0 420 220" className="h-auto w-full" role="img" aria-label="Product Venn">
+      <svg viewBox="0 0 420 220" className="h-36 w-full" role="img" aria-label="Product Venn">
         <circle cx="155" cy="110" r="78" fill="#0b1c18" fillOpacity="0.08" stroke="#0b1c18" strokeWidth="1.5" />
         <circle cx="265" cy="110" r="78" fill="#d36f35" fillOpacity="0.12" stroke="#d36f35" strokeWidth="1.5" />
         <circle cx="210" cy="68" r="72" fill="#5ad4d4" fillOpacity="0.14" stroke="#5ad4d4" strokeWidth="1.5" />

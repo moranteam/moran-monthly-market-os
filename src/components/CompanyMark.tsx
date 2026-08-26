@@ -44,15 +44,26 @@ function RemoteMark({
   size: NonNullable<CompanyMarkProps['size']>
 }) {
   const [source, setSource] = useState(0)
+  const [loaded, setLoaded] = useState(false)
   const urls = logoSources(domain)
   if (source >= urls.length) return <LetterMark name={name} size={size} />
   return (
-    <img
-      src={urls[source]}
-      alt=""
-      className={`${box[size]} shrink-0 rounded-sm border border-ink/15 bg-white object-contain p-0.5`}
-      onError={() => setSource((current) => current + 1)}
-    />
+    <span className={`relative ${box[size]} shrink-0`}>
+      <LetterMark name={name} size={size} />
+      <img
+        src={urls[source]}
+        alt=""
+        referrerPolicy="no-referrer"
+        className={`absolute inset-0 h-full w-full rounded-sm border border-ink/15 bg-white object-contain p-0.5 ${
+          loaded ? 'opacity-100' : 'opacity-0'
+        }`}
+        onLoad={() => setLoaded(true)}
+        onError={() => {
+          setLoaded(false)
+          setSource((current) => current + 1)
+        }}
+      />
+    </span>
   )
 }
 
